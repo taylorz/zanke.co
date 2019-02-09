@@ -1,0 +1,88 @@
+@import "variables.scss";
+@import "fonts.scss";
+@import "mixins.scss";
+@import "bootstrap-overrides.scss";
+
+body {
+  margin: 0; padding: 0;
+  background-color: $bgColorDark;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  #background {
+    width: 100vw;
+    height: 100vw;
+    background: $bgColorDark;
+    position: absolute;
+    z-index: 1000;
+    transform: translateY(-100%);
+  }
+  .main-container {
+    .container-fluid {
+      .section-container {
+        width: 100vw;
+        padding: $buffer*5;
+        background-color: $bgColorLight;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+      }
+      .hero-container {
+        height: 100vh;
+        @include breakpoint(md) {
+          font-size: $primaryFontSize*.8;
+          line-height: $primaryFontLineHeight*.8;
+        }
+        @include breakpoint(xs) {
+          padding-top: $buffer*10;
+        }
+        .hero-text {
+          font-size: $primaryFontSize;
+          line-height: $primaryFontLineHeight;
+          color: $primaryFontColor;
+          font-family: $primaryFont;
+          @include animation(1s, $animationTimeFirst, easeUp);
+          @include breakpoint(md) {
+            font-size: $primaryFontSize*.8;
+            line-height: $primaryFontLineHeight*.8;
+          }
+          @include breakpoint(xs) {
+            opacity: 0;
+          }
+          span {
+            opacity: 0;
+            &.line-one {
+              @include animation(1s, $animationTimeFirst, easeRotateIn);
+            }
+            &.line-two {
+              @include animation(1s, $animationTimeSecond, easeRotateIn);
+            }
+            &.line-three {
+              @include animation(1s, $animationTimeThird, easeRotateIn);
+            }
+            display: block;
+            @include breakpoint(xs) {
+              display: inline;
+              opacity: 1;
+              animation: none !important;
+            }
+          }
+        }
+      } //hero-container
+      .works-container {
+        margin-top: -12vh;
+        .work-preview {
+          opacity: 0;
+          @include animation(1s, $animationTimeFourth, easeUp);
+          margin-bottom: $buffer*10;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .work-item {
+            height: 800px;
+            background: $bgColorMedium;
+          }
+        }
+      } //works-container
+    } //container-fluid
+  }//main-container
+} //body

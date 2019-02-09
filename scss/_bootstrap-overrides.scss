@@ -1,0 +1,20 @@
+a:link {
+  color: $linkColor;
+  text-decoration: none;
+  @include transition;
+}
+a:visited {
+  color: $linkColor;
+  text-decoration: none;
+  @include transition;
+}
+a:hover {
+  color: $linkColor;
+  text-decoration: none;
+  @include transition;
+}
+a.active {
+  color: $linkColor;
+  text-decoration: none;
+  @include transition;
+}
