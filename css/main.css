@@ -112,14 +112,18 @@ body {
             display: inline;
             opacity: 1;
             animation: none !important; } }
+    body .main-container .container-fluid .hero-container .hero-subtext {
+      color: #ccc;
+      position: absolute;
+      bottom: 10vw;
+      opacity: 0;
+      animation: 1s ease-out 1.25s 1 easeRotateIn forwards; }
   body .main-container .container-fluid .works-container {
-    margin-top: -12vh; }
+    margin-top: -10vw; }
     body .main-container .container-fluid .works-container .work-preview {
       opacity: 0;
       animation: 1s ease-out 0.75s 1 easeUp forwards;
       margin-bottom: 10vw; }
-      body .main-container .container-fluid .works-container .work-preview:last-child {
-        margin-bottom: 0; }
       body .main-container .container-fluid .works-container .work-preview .work-item {
-        height: 800px;
+        height: 80vh;
         background: #f5f5f5; }

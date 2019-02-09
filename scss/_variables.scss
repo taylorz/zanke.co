@@ -7,6 +7,7 @@ $primaryFont:               'Atlas Grotesk';
 $primaryFontSize:           22px;
 $primaryFontLineHeight:     $primaryFontSize*1.75;
 $primaryFontColor:          $bgColorDark;
+$lightFontColor:            #ccc;
 
 $linkColor:                 $primaryFontColor;
 $linkBorderColor:           #eeeeee;
@@ -18,5 +19,11 @@ $animationTimeSecond:       .25s;
 $animationTimeThird:        .50s;
 $animationTimeFourth:       .75s;
 $animationTimeFifth:        1s;
+$animationTimeSixth:        1.25s;
+$animationTimeSeventh:      1.5s;
+$animationTimeEighth:       1.75s;
+$animationTimeNinth:        2s;
 
 $iconWidth:                 $buffer*2;
+
+$offsetHintVertical:        $buffer*10;

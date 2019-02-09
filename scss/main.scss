@@ -23,7 +23,7 @@ body {
         padding: $buffer*5;
         background-color: $bgColorLight;
         position: relative;
-        display: flex;
+        display:flex;
         align-items: flex-start;
       }
       .hero-container {
@@ -66,23 +66,27 @@ body {
               animation: none !important;
             }
           }
+        }//hero-subtext
+        .hero-subtext {
+          color: $lightFontColor;
+          position: absolute;
+          bottom: $offsetHintVertical;
+          opacity: 0;
+          @include animation(1s, $animationTimeSixth, easeRotateIn);
         }
       } //hero-container
       .works-container {
-        margin-top: -12vh;
+        margin-top: -$offsetHintVertical;
         .work-preview {
           opacity: 0;
           @include animation(1s, $animationTimeFourth, easeUp);
           margin-bottom: $buffer*10;
-          &:last-child {
-            margin-bottom: 0;
-          }
           .work-item {
-            height: 800px;
+            height: 80vh;
             background: $bgColorMedium;
           }
-        }
-      } //works-container
-    } //container-fluid
+        }//work-preview
+      }//works-container
+    }//container-fluid
   }//main-container
 } //body
