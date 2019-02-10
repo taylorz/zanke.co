@@ -5,40 +5,53 @@
 
 body {
   margin: 0; padding: 0;
-  background-color: $bgColorDark;
+  background-color: $bgColorLight;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  #background {
-    width: 100vw;
-    height: 100vw;
-    background: $bgColorDark;
-    position: absolute;
-    z-index: 1000;
-    transform: translateY(-100%);
-  }
   .page-container {
+    &.index-page{
+      #background {
+        width: 100vw;
+        height: 100vw;
+        background: $bgColorMedium;
+        position: absolute;
+        // z-index: 1000;
+        transform: translateY(-100%);
+      }
+    }
+    &.me-page{
+      #background {
+        width: 100vw;
+        height: 100vw;
+        background: $bgColorMedium;
+        position: absolute;
+        // z-index: 1000;
+        transform: translateY(0%);
+      }
+    }
     .container-fluid {
       padding: 0;
       section {
         padding: $buffer*5;
-        background-color: $bgColorLight;
         position: relative;
-      }
-      .hero-container {
-        height: 100vh;
+        @include breakpoint(xs) {
+          padding-top: $buffer*10;
+        }
         @include breakpoint(md) {
           font-size: $primaryFontSize*.8;
           line-height: $primaryFontLineHeight*.8;
         }
-        @include breakpoint(xs) {
-          padding-top: $buffer*10;
-        }
+        font-size: $primaryFontSize;
+        line-height: $primaryFontLineHeight;
+        color: $primaryFontColor;
+        font-family: $primaryFont;
+      }
+    }//container-fluid
+    &.index-page {
+      .hero-container {
+        height: 100vh;
         .hero-text {
-          font-size: $primaryFontSize;
-          line-height: $primaryFontLineHeight;
-          color: $primaryFontColor;
-          font-family: $primaryFont;
-          @include animation(1s, $animationTimeFirst, easeUp);
+          @include animation($animationDurationLong, $animationTimeFirst, easeUp);
           @include breakpoint(md) {
             font-size: $primaryFontSize*.8;
             line-height: $primaryFontLineHeight*.8;
@@ -49,13 +62,13 @@ body {
           span {
             opacity: 0;
             &.line-one {
-              @include animation(1s, $animationTimeFirst, easeRotateIn);
+              @include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);
             }
             &.line-two {
-              @include animation(1s, $animationTimeSecond, easeRotateIn);
+              @include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);
             }
             &.line-three {
-              @include animation(1s, $animationTimeThird, easeRotateIn);
+              @include animation($animationDurationLong, $animationTimeThird, easeRotateIn);
             }
             display: block;
             @include breakpoint(xs) {
@@ -70,7 +83,7 @@ body {
           position: absolute;
           bottom: $offsetHintVertical;
           opacity: 0;
-          @include animation(1s, $animationTimeSixth, easeRotateIn);
+          @include animation($animationDurationLong, $animationTimeSixth, easeRotateIn);
         }
       } //hero-container
       .works-container {
@@ -81,14 +94,49 @@ body {
           padding: 0;
           opacity: 0;
           &:first-child {
-            @include animation(1s, $animationTimeFourth, easeUp);
+            @include animation($animationDurationLong, $animationTimeFourth, easeUp);
           }
           .work-item {
-            height: 80vh;
+            height: 90vh;
             background: $bgColorMedium;
           }
         }//work-preview
       }//works-container
-    }//container-fluid
-  }//main-container
+    }//index-page
+    &.me-page {
+      background: $bgColorMedium;
+      .me-container {
+        height: 100vh;
+        .me-hero {
+          margin-bottom: $buffer*5;
+          .california-relaxin {
+            text-align: left;
+            @include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);
+            @include breakpoint(md) {
+              text-align: center;
+            }
+            img {
+              opacity: 0;
+              @include animation($animationDurationLong, $animationTimeFirst, easeUp);
+              max-width: 100%;
+              width: 100%;
+              max-height: 100%;
+            }
+          }
+        }
+        .me-bio {
+          .about-me {
+            @include animation($animationDurationLong, $animationTimeSecond, easeUp);
+            p {
+              margin-bottom: $buffer*2;
+              opacity: 0;
+            }
+            .p-one {@include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);}
+            .p-two {@include animation($animationDurationLong, $animationTimeThird, easeRotateIn);}
+            .p-three {@include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);}
+          }
+        }
+      }
+    }//me-page
+  }//page-container
 } //body

@@ -14,6 +14,9 @@ $linkBorderColor:           #eeeeee;
 $linkBorderHoverColor:      $primaryFontColor;
 $linkBorder:                1px solid $linkBorderColor;
 
+$animationDurationLong:     .75s;
+$animationDurationSnappy:   .25s;
+
 $animationTimeFirst:        0s;
 $animationTimeSecond:       .25s;
 $animationTimeThird:        .50s;

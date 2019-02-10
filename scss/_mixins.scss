@@ -39,7 +39,17 @@
 }
 @keyframes easeUp {
   0% {
-    transform: translateY($buffer*2);
+    transform: translateY($buffer);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes easeDown {
+  0% {
+    transform: translateY(-$buffer);
     opacity: 0;
   }
   100% {
@@ -55,6 +65,6 @@
 [data-aos="worksFade"] {
   // opacity: 0;
   &.aos-animate {
-    @include animation(1s, $animationTimeSecond, easeUp);
+    @include animation($animationDurationLong, 0s, easeUp);
   }
 }
