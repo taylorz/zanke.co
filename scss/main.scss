@@ -9,26 +9,26 @@ body {
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   .page-container {
-    &.index-page{
-      #background {
-        width: 100vw;
-        height: 100vw;
-        background: $bgColorMedium;
-        position: absolute;
-        // z-index: 1000;
-        transform: translateY(-100%);
-      }
-    }
-    &.me-page{
-      #background {
-        width: 100vw;
-        height: 100vw;
-        background: $bgColorMedium;
-        position: absolute;
-        // z-index: 1000;
-        transform: translateY(0%);
-      }
-    }
+    // &.index-page{
+    //   #background {
+    //     width: 100vw;
+    //     height: 100vw;
+    //     background: $bgColorMedium;
+    //     position: absolute;
+    //     // z-index: 1000;
+    //     transform: translateY(-100%);
+    //   }
+    // }
+    // &.me-page{
+    //   #background {
+    //     width: 100vw;
+    //     height: 100vw;
+    //     background: $bgColorMedium;
+    //     position: absolute;
+    //     // z-index: 1000;
+    //     transform: translateY(0%);
+    //   }
+    // }
     .container-fluid {
       padding: 0;
       section {
@@ -107,35 +107,31 @@ body {
       background: $bgColorMedium;
       .me-container {
         height: 100vh;
-        .me-hero {
-          margin-bottom: $buffer*5;
-          .california-relaxin {
-            text-align: left;
-            @include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);
+        .me-materials {
+          .about-me {
+            @include animation($animationDurationLong, $animationTimeFirst, easeUp);
+            p {
+              margin-bottom: $buffer*2;
+              opacity: 0;
+            }
+            .p-one {@include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);}
+            .p-two {@include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);}
+            .p-three {@include animation($animationDurationLong, $animationTimeThird, easeRotateIn);}
+          }
+          .picture-me{
+            @include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);
             @include breakpoint(md) {
               text-align: center;
             }
             img {
               opacity: 0;
-              @include animation($animationDurationLong, $animationTimeFirst, easeUp);
+              @include animation($animationDurationLong, $animationTimeSecond, easeUp);
               max-width: 100%;
               width: 100%;
               max-height: 100%;
             }
-          }
-        }
-        .me-bio {
-          .about-me {
-            @include animation($animationDurationLong, $animationTimeSecond, easeUp);
-            p {
-              margin-bottom: $buffer*2;
-              opacity: 0;
-            }
-            .p-one {@include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);}
-            .p-two {@include animation($animationDurationLong, $animationTimeThird, easeRotateIn);}
-            .p-three {@include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);}
-          }
-        }
+          }//picture-me
+        }//me-materials
       }
     }//me-page
   }//page-container
