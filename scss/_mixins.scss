@@ -39,7 +39,7 @@
 }
 @keyframes easeUp {
   0% {
-    transform: translateY($buffer);
+    transform: translateY($buffer*2);
     opacity: 0;
   }
   100% {
@@ -50,4 +50,11 @@
 
 @mixin animation($duration, $delay, $animation) {
   animation: $duration ease-out $delay 1 $animation forwards;
+}
+
+[data-aos="worksFade"] {
+  // opacity: 0;
+  &.aos-animate {
+    @include animation(1s, $animationTimeSecond, easeUp);
+  }
 }

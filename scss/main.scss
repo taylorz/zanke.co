@@ -16,15 +16,13 @@ body {
     z-index: 1000;
     transform: translateY(-100%);
   }
-  .main-container {
+  .page-container {
     .container-fluid {
-      .section-container {
-        width: 100vw;
+      padding: 0;
+      section {
         padding: $buffer*5;
         background-color: $bgColorLight;
         position: relative;
-        display:flex;
-        align-items: flex-start;
       }
       .hero-container {
         height: 100vh;
@@ -77,10 +75,14 @@ body {
       } //hero-container
       .works-container {
         margin-top: -$offsetHintVertical;
+        position: relative;
         .work-preview {
-          opacity: 0;
-          @include animation(1s, $animationTimeFourth, easeUp);
           margin-bottom: $buffer*10;
+          padding: 0;
+          opacity: 0;
+          &:first-child {
+            @include animation(1s, $animationTimeFourth, easeUp);
+          }
           .work-item {
             height: 80vh;
             background: $bgColorMedium;
