@@ -5,30 +5,25 @@
 
 body {
   margin: 0; padding: 0;
-  background-color: $bgColorLight;
+  background-color: $bgColorDark;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+  // #background {
+  //   width: 100vw;
+  //   height: 100vw;
+  //   background: $bgColorDark;
+  //   position: absolute;
+  //   z-index: 0;
+  //   &.offscreen {
+  //     transform: translateY(-100%);
+  //     @include transition;
+  //   }
+  //   &.onscreen {
+  //     transform: translateY(0%);
+  //     @include transition;
+  //   }
+  // }
   .page-container {
-    // &.index-page{
-    //   #background {
-    //     width: 100vw;
-    //     height: 100vw;
-    //     background: $bgColorMedium;
-    //     position: absolute;
-    //     // z-index: 1000;
-    //     transform: translateY(-100%);
-    //   }
-    // }
-    // &.me-page{
-    //   #background {
-    //     width: 100vw;
-    //     height: 100vw;
-    //     background: $bgColorMedium;
-    //     position: absolute;
-    //     // z-index: 1000;
-    //     transform: translateY(0%);
-    //   }
-    // }
     .container-fluid {
       padding: 0;
       section {
@@ -50,6 +45,7 @@ body {
     &.index-page {
       .hero-container {
         height: 100vh;
+        background-color: $bgColorLight;
         .hero-text {
           @include animation($animationDurationLong, $animationTimeFirst, easeUp);
           @include breakpoint(md) {
@@ -87,6 +83,7 @@ body {
         }
       } //hero-container
       .works-container {
+        background-color: $bgColorLight;
         margin-top: -$offsetHintVertical;
         position: relative;
         .work-preview {
@@ -104,11 +101,13 @@ body {
       }//works-container
     }//index-page
     &.me-page {
-      background: $bgColorMedium;
+      background: $bgColorDark;
       .me-container {
         height: 100vh;
         .me-materials {
+          height: 100%;
           .about-me {
+            color: $lightFontColor;
             @include animation($animationDurationLong, $animationTimeFirst, easeUp);
             p {
               margin-bottom: $buffer*2;
@@ -119,16 +118,23 @@ body {
             .p-three {@include animation($animationDurationLong, $animationTimeThird, easeRotateIn);}
           }
           .picture-me{
+            height: 100%;
+            // display: flex;
+            // justify-content: flex-end;
+            // align-items: center;
+            text-align: right;
             @include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);
             @include breakpoint(md) {
+              // justify-content: flex-start;
               text-align: center;
             }
             img {
               opacity: 0;
+              max-height:100%;
               @include animation($animationDurationLong, $animationTimeSecond, easeUp);
-              max-width: 100%;
-              width: 100%;
-              max-height: 100%;
+              @include breakpoint(md) {
+                width: 100%;
+              }
             }
           }//picture-me
         }//me-materials
