@@ -5,24 +5,24 @@
 
 body {
   margin: 0; padding: 0;
-  background-color: $bgColorDark;
+  background-color: $bgColorLight;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  // #background {
-  //   width: 100vw;
-  //   height: 100vw;
-  //   background: $bgColorDark;
-  //   position: absolute;
-  //   z-index: 0;
-  //   &.offscreen {
-  //     transform: translateY(-100%);
-  //     @include transition;
-  //   }
-  //   &.onscreen {
-  //     transform: translateY(0%);
-  //     @include transition;
-  //   }
-  // }
+  #background {
+    width: 100vw;
+    height: 100vh;
+    background: $bgColorMedium;
+    position: absolute;
+    z-index: 0;
+    &.offscreen {
+      transform: translateY(-100%);
+      @include transition;
+    }
+    &.onscreen {
+      transform: translateY(0%);
+      @include transition;
+    }
+  }
   .page-container {
     .container-fluid {
       padding: 0;
@@ -101,13 +101,13 @@ body {
       }//works-container
     }//index-page
     &.me-page {
-      background: $bgColorDark;
       .me-container {
         height: 100vh;
         .me-materials {
           height: 100%;
           .about-me {
-            color: $lightFontColor;
+            padding-bottom: $buffer*5;
+            color: $primaryFontColor;
             @include animation($animationDurationLong, $animationTimeFirst, easeUp);
             p {
               margin-bottom: $buffer*2;
@@ -116,20 +116,21 @@ body {
             .p-one {@include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);}
             .p-two {@include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);}
             .p-three {@include animation($animationDurationLong, $animationTimeThird, easeRotateIn);}
+            .p-four {@include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);}
+            .p-five {@include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);}
           }
           .picture-me{
-            height: 100%;
+            // height: 100%;
             // display: flex;
             // justify-content: flex-end;
             // align-items: center;
             text-align: right;
-            @include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);
             @include breakpoint(md) {
-              // justify-content: flex-start;
               text-align: center;
             }
             img {
               opacity: 0;
+              max-width: 100%;
               max-height:100%;
               @include animation($animationDurationLong, $animationTimeSecond, easeUp);
               @include breakpoint(md) {

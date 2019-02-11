@@ -7,6 +7,11 @@ $primaryFont:               'Atlas Grotesk';
 $primaryFontSize:           22px;
 $primaryFontLineHeight:     $primaryFontSize*1.75;
 $primaryFontColor:          $bgColorDark;
+
+$largeFontSize:             $primaryFontSize*1.5;
+$largeFontLineHeight:       $primaryFontLineHeight*1.5;
+
+
 $lightFontColor:            #fafafa;
 $mediumFontColor:           #cccccc;
 

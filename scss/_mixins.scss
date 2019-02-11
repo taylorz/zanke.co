@@ -27,6 +27,13 @@
   transition: all .25s ease-in-out;
 }
 
+@mixin transition {
+  -webkit-transition: all $animationDurationSnappy ease-in-out;
+  -moz-transition: all $animationDurationSnappy ease-in-out;
+  -o-transition: all $animationDurationSnappy ease-in-out;
+  transition: all $animationDurationSnappy ease-in-out;
+}
+
 @keyframes easeRotateIn {
   0% {
     transform: rotate(-1deg);
@@ -39,7 +46,7 @@
 }
 @keyframes easeUp {
   0% {
-    transform: translateY($buffer);
+    transform: translateY($buffer*2);
     opacity: 0;
   }
   100% {
@@ -49,7 +56,7 @@
 }
 @keyframes easeDown {
   0% {
-    transform: translateY(-$buffer);
+    transform: translateY(-$buffer*2);
     opacity: 0;
   }
   100% {
