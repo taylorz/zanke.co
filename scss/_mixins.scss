@@ -65,6 +65,26 @@
   }
 }
 
+@keyframes easeDownOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY($buffer*2);
+    opacity: 0;
+  }
+}
+
+@keyframes backgroundShutter {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @mixin animation($duration, $delay, $animation) {
   animation: $duration ease-out $delay 1 $animation forwards;
 }

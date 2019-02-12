@@ -1,4 +1,4 @@
-@import "variables.scss";
+ @import "variables.scss";
 @import "fonts.scss";
 @import "mixins.scss";
 @import "bootstrap-overrides.scss";
@@ -8,22 +8,50 @@ body {
   background-color: $bgColorLight;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  #background {
-    width: 100vw;
-    height: 100vh;
-    background: $bgColorMedium;
-    position: absolute;
-    z-index: 0;
-    &.offscreen {
-      transform: translateY(-100%);
-      @include transition;
-    }
-    &.onscreen {
-      transform: translateY(0%);
-      @include transition;
-    }
-  }
   .page-container {
+    #background {
+      width: 100%;
+      height: 100vh;
+      background: $bgColorDark;
+      position: absolute;
+      z-index: 1;
+      transform: translateY(-100%);
+      transition: all 1s ease !important;
+    }
+    &.is-exiting {
+      #background {
+        transform: translateY(0%);
+        transition: all 1s ease !important;
+      }
+      .hero-text {
+        animation-delay: $animationTimeThird;
+        animation-direction: reverse !important;
+        opacity: 1;
+        // animation: none !important;
+        span {
+          // animation: none !important;
+          opacity: 0;
+          &.line-one{
+            @include animation($animationDurationLong, 0, easeUp);
+            animation-delay: $animationTimeThird !important;
+            animation-direction: reverse !important;
+          }
+          &.line-two{
+            @include animation($animationDurationLong, 0, easeUp);
+            animation-delay: $animationTimeSecond !important;
+            animation-direction: reverse !important;
+          }
+          &.line-three{
+            @include animation($animationDurationLong, 0, easeUp);
+            animation-delay: $animationTimeFirst !important;
+            animation-direction: reverse !important;
+          }
+        }
+      }
+      .work-preview {
+        animation-direction: reverse !important;
+      }
+    }
     .container-fluid {
       padding: 0;
       section {
@@ -42,10 +70,11 @@ body {
         font-family: $primaryFont;
       }
     }//container-fluid
-    &.index-page {
+    .index-page {
+      z-index: 0;
       .hero-container {
         height: 100vh;
-        background-color: $bgColorLight;
+        // background-color: $bgColorLight;
         .hero-text {
           @include animation($animationDurationLong, $animationTimeFirst, easeUp);
           @include breakpoint(md) {
@@ -100,14 +129,15 @@ body {
         }//work-preview
       }//works-container
     }//index-page
-    &.me-page {
+    .me-page {
+      z-index: 2;
+      background: $bgColorDark;
       .me-container {
-        height: 100vh;
         .me-materials {
           height: 100%;
           .about-me {
             padding-bottom: $buffer*5;
-            color: $primaryFontColor;
+            color: $lightFontColor;
             @include animation($animationDurationLong, $animationTimeFirst, easeUp);
             p {
               margin-bottom: $buffer*2;
@@ -124,7 +154,8 @@ body {
             // display: flex;
             // justify-content: flex-end;
             // align-items: center;
-            text-align: right;
+            // text-align: right;
+            width: 100%;
             @include breakpoint(md) {
               text-align: center;
             }

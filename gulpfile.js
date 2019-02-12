@@ -49,20 +49,20 @@ gulp.task('jquery', function () {
     // creates ./public/vendor/jquery.custom.js
 });
 
-gulp.task('minify-js', function() {
-  return gulp.src('js/main.js')
-    .pipe(uglify())
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('js'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-});
+// gulp.task('minify-js', function() {
+//   return gulp.src('js/main.js')
+//     .pipe(uglify())
+//     .pipe(header(banner, {
+//       pkg: pkg
+//     }))
+//     .pipe(rename({
+//       suffix: '.min'
+//     }))
+//     .pipe(gulp.dest('js'))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }))
+// });
 
 gulp.task('default', ['sass', 'minify-css', 'minify-js']);
 
@@ -75,7 +75,7 @@ gulp.task('browserSync', function() {
   })
 })
 
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', ['browserSync', 'sass', 'minify-css'], function() {
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/*.css', ['minify-js']);
