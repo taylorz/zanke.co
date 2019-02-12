@@ -10,48 +10,30 @@ body {
 	-moz-osx-font-smoothing: grayscale;
   .page-container {
     #background {
-      width: 100%;
       height: 100vh;
-      background: $bgColorDark;
+      width: 100%;
       position: absolute;
-      z-index: 1;
       transform: translateY(-100%);
-      transition: all 1s ease !important;
+      background: $bgColorDark;
+      z-index: 1;
+      &.onscreen {
+        transform: translateY(0%);
+      }
     }
     &.is-exiting {
       #background {
-        transform: translateY(0%);
-        transition: all 1s ease !important;
+        @include animation($animationDurationLong, $animationTimeSecond, backgroundShutter);
+        -webkit-animation-timing-function: cubic-bezier(0.5,0,0.5,1);
       }
-      .hero-text {
-        animation-delay: $animationTimeThird;
+      .container-fluid {
+        @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
         animation-direction: reverse !important;
-        opacity: 1;
-        // animation: none !important;
-        span {
-          // animation: none !important;
-          opacity: 0;
-          &.line-one{
-            @include animation($animationDurationLong, 0, easeUp);
-            animation-delay: $animationTimeThird !important;
-            animation-direction: reverse !important;
-          }
-          &.line-two{
-            @include animation($animationDurationLong, 0, easeUp);
-            animation-delay: $animationTimeSecond !important;
-            animation-direction: reverse !important;
-          }
-          &.line-three{
-            @include animation($animationDurationLong, 0, easeUp);
-            animation-delay: $animationTimeFirst !important;
-            animation-direction: reverse !important;
-          }
+        .hero-container *, .me-container *, .work-container * {
+          animation: none !important;
+          opacity: 1 !important;
         }
       }
-      .work-preview {
-        animation-direction: reverse !important;
-      }
-    }
+    }//is-exiting
     .container-fluid {
       padding: 0;
       section {
@@ -130,15 +112,16 @@ body {
       }//works-container
     }//index-page
     .me-page {
-      z-index: 2;
       background: $bgColorDark;
+      z-index: 100;
+      position: absolute;
       .me-container {
         .me-materials {
           height: 100%;
           .about-me {
             padding-bottom: $buffer*5;
             color: $lightFontColor;
-            @include animation($animationDurationLong, $animationTimeFirst, easeUp);
+            @include animation($animationDurationLong, $animationTimeFirst, easeDown);
             p {
               margin-bottom: $buffer*2;
               opacity: 0;
