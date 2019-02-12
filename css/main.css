@@ -96,13 +96,23 @@ body {
     z-index: 1; }
     body .page-container #background.onscreen {
       transform: translateY(0%); }
+  body .page-container.is-exiting[data-transition=backgroundDarkUp] #background {
+    animation: 0.75s ease-out 0.25s 1 backgroundShutter forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+    animation-direction: reverse !important; }
+  body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid {
+    animation: 0.25s ease-out 0s 1 easeDown forwards;
+    animation-direction: forwards !important; }
+    body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid .hero-container *, body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid .me-container *, body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid .works-container * {
+      animation: none !important;
+      opacity: 1 !important; }
   body .page-container.is-exiting #background {
     animation: 0.75s ease-out 0.25s 1 backgroundShutter forwards;
     -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1); }
   body .page-container.is-exiting .container-fluid {
     animation: 0.25s ease-out 0s 1 easeUp forwards;
     animation-direction: reverse !important; }
-    body .page-container.is-exiting .container-fluid .hero-container *, body .page-container.is-exiting .container-fluid .me-container *, body .page-container.is-exiting .container-fluid .work-container * {
+    body .page-container.is-exiting .container-fluid .hero-container *, body .page-container.is-exiting .container-fluid .me-container *, body .page-container.is-exiting .container-fluid .works-container * {
       animation: none !important;
       opacity: 1 !important; }
   body .page-container .container-fluid {

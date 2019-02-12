@@ -21,6 +21,21 @@ body {
       }
     }
     &.is-exiting {
+      &[data-transition=backgroundDarkUp] {
+        #background {
+          @include animation($animationDurationLong, $animationTimeSecond, backgroundShutter);
+          -webkit-animation-timing-function: cubic-bezier(0.5,0,0.5,1);
+          animation-direction: reverse !important;
+        }
+        .container-fluid {
+          @include animation($animationDurationSnappy, $animationTimeFirst, easeDown);
+          animation-direction: forwards !important;
+          .hero-container *, .me-container *, .works-container * {
+            animation: none !important;
+            opacity: 1 !important;
+          }
+        }
+      }
       #background {
         @include animation($animationDurationLong, $animationTimeSecond, backgroundShutter);
         -webkit-animation-timing-function: cubic-bezier(0.5,0,0.5,1);
@@ -28,7 +43,7 @@ body {
       .container-fluid {
         @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
         animation-direction: reverse !important;
-        .hero-container *, .me-container *, .work-container * {
+        .hero-container *, .me-container *, .works-container * {
           animation: none !important;
           opacity: 1 !important;
         }
