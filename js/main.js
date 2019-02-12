@@ -20,10 +20,12 @@ $('document').ready(function(){
                       target = target ? target : 0;
                   if (current === target) {
                       transition = 'fade';
-                  } else if (current < target) {
+                  } else if (target === 1) {
                       transition = 'backgroundDarkDown';
-                  } else if (current > target) {
+                  } else if (target === 0) {
                       transition = 'backgroundDarkUp';
+                  } else if (target === -1) {
+                    transition = 'imageBecomesHero';
                   }
               },
               onStart: {

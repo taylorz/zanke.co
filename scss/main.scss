@@ -29,14 +29,20 @@ body {
         }
         .container-fluid {
           @include animation($animationDurationSnappy, $animationTimeFirst, easeDown);
-          animation-direction: forwards !important;
+          animation-direction: reverse !important;
           .hero-container *, .me-container *, .works-container * {
             animation: none !important;
             opacity: 1 !important;
           }
         }
       }
-      
+      &[data-transition=imageBecomesHero] {
+        #background {
+          transform: translateY(-100%) !important;
+        }
+        
+      }
+      &[data-transition=backgroundDarkDown] {
         #background {
           @include animation($animationDurationMiddle, $animationTimeSecond, backgroundShutter);
           -webkit-animation-timing-function: cubic-bezier(1,0,0.5,1);
@@ -49,7 +55,7 @@ body {
             opacity: 1 !important;
           }
         }
-
+      }
     }//is-exiting
     .container-fluid {
       padding: 0;
@@ -186,6 +192,9 @@ body {
       }
       .me-container {
         height: 100vh;
+        @include breakpoint(xs) {
+          height: 120vh;
+        }
         .me-materials {
           @include breakpoint(xs) {
             margin-top: $offsetHintVertical;

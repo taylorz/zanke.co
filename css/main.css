@@ -110,17 +110,19 @@ body {
     animation-direction: reverse !important; }
   body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid {
     animation: 0.25s ease-out 0s 1 easeDown forwards;
-    animation-direction: forwards !important; }
+    animation-direction: reverse !important; }
     body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid .hero-container *, body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid .me-container *, body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid .works-container * {
       animation: none !important;
       opacity: 1 !important; }
-  body .page-container.is-exiting #background {
+  body .page-container.is-exiting[data-transition=imageBecomesHero] #background {
+    transform: translateY(-100%) !important; }
+  body .page-container.is-exiting[data-transition=backgroundDarkDown] #background {
     animation: 0.5s ease-out 0.25s 1 backgroundShutter forwards;
     -webkit-animation-timing-function: cubic-bezier(1, 0, 0.5, 1); }
-  body .page-container.is-exiting .container-fluid {
+  body .page-container.is-exiting[data-transition=backgroundDarkDown] .container-fluid {
     animation: 0.25s ease-out 0s 1 easeUp forwards;
     animation-direction: reverse !important; }
-    body .page-container.is-exiting .container-fluid .hero-container *, body .page-container.is-exiting .container-fluid .me-container *, body .page-container.is-exiting .container-fluid .works-container * {
+    body .page-container.is-exiting[data-transition=backgroundDarkDown] .container-fluid .hero-container *, body .page-container.is-exiting[data-transition=backgroundDarkDown] .container-fluid .me-container *, body .page-container.is-exiting[data-transition=backgroundDarkDown] .container-fluid .works-container * {
       animation: none !important;
       opacity: 1 !important; }
   body .page-container .container-fluid {
@@ -239,6 +241,9 @@ body {
         color: #44444A; }
     body .page-container .me-page .me-container {
       height: 100vh; }
+      @media (max-width: 767px) {
+        body .page-container .me-page .me-container {
+          height: 120vh; } }
       @media (max-width: 767px) {
         body .page-container .me-page .me-container .me-materials {
           margin-top: 10vw; } }
