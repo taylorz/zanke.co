@@ -146,6 +146,7 @@ body {
         position: relative;
         .work-preview {
           margin-bottom: $buffer*10;
+          margin: 0;
           padding: 0;
           opacity: 0;
           &:first-child {
@@ -196,10 +197,14 @@ body {
           position: absolute;
           bottom: $offsetHintVertical;
           .contact-info {
-            color: $lightFontColor;
+            color: $mediumDarkFontColor;
             p {
               opacity: 0;
               font-size: $smallFontSize;
+              a:link {color: $mediumDarkFontColor;}
+              a:visited {color: $mediumDarkFontColor;}
+              a:hover {color: $lightFontColor;}
+              a:active {color: $lightFontColor;}
             }
             .p-four {@include animation($animationDurationLong, $animationTimeFifth, easeRotateInLeft);}
           }
