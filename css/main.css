@@ -207,7 +207,8 @@ body {
       position: relative; }
       body .page-container .index-page .works-container .work-preview {
         margin-bottom: 10vw;
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
         padding: 0;
         opacity: 0; }
         body .page-container .index-page .works-container .work-preview:first-child {
@@ -248,6 +249,7 @@ body {
         body .page-container .me-page .me-container .me-materials .about-me .p-three {
           animation: 0.75s ease-out 0.5s 1 easeRotateInLeft forwards; }
       body .page-container .me-page .me-container .me-contact {
+        width: 100%;
         position: absolute;
         bottom: 10vw; }
         body .page-container .me-page .me-container .me-contact .contact-info {
@@ -256,26 +258,33 @@ body {
             opacity: 0;
             font-size: 16.5px; }
             body .page-container .me-page .me-container .me-contact .contact-info p a:link {
-              color: #44444A; }
+              color: #fafafa; }
             body .page-container .me-page .me-container .me-contact .contact-info p a:visited {
-              color: #44444A; }
+              color: #fafafa; }
             body .page-container .me-page .me-container .me-contact .contact-info p a:hover {
-              color: #fafafa; }
+              color: #44444A; }
             body .page-container .me-page .me-container .me-contact .contact-info p a:active {
-              color: #fafafa; }
+              color: #44444A; }
           body .page-container .me-page .me-container .me-contact .contact-info .p-four {
-            animation: 0.75s ease-out 1s 1 easeRotateInLeft forwards; }
+            animation: 0.75s ease-out 1s 1 easeRotateInLeft forwards;
+            display: block; }
     body .page-container .me-page .me-image {
       margin-top: -10vw; }
-      @media (max-width: 992px) {
-        body .page-container .me-page .me-image .me-picture {
-          text-align: center; } }
-      body .page-container .me-page .me-image .me-picture img {
+      body .page-container .me-page .me-image .me-picture {
         opacity: 0;
-        width: 100%;
-        max-width: 100%;
-        max-height: 100%;
         animation: 0.75s ease-out 0.75s 1 easeUp forwards; }
         @media (max-width: 992px) {
-          body .page-container .me-page .me-image .me-picture img {
-            width: 100%; } }
+          body .page-container .me-page .me-image .me-picture {
+            text-align: center; } }
+        body .page-container .me-page .me-image .me-picture img {
+          width: 100%;
+          max-width: 100%;
+          max-height: 100%; }
+          @media (max-width: 992px) {
+            body .page-container .me-page .me-image .me-picture img {
+              width: 100%; } }
+        body .page-container .me-page .me-image .me-picture .picture-caption {
+          margin-top: 2vw;
+          color: #44444A;
+          font-size: 16.5px;
+          text-align: center; }

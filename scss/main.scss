@@ -146,7 +146,7 @@ body {
         position: relative;
         .work-preview {
           margin-bottom: $buffer*10;
-          margin: 0;
+          margin-left: 0; margin-right: 0;
           padding: 0;
           opacity: 0;
           &:first-child {
@@ -194,6 +194,7 @@ body {
           }
         }//me-materials
         .me-contact {
+          width: 100%;
           position: absolute;
           bottom: $offsetHintVertical;
           .contact-info {
@@ -201,33 +202,42 @@ body {
             p {
               opacity: 0;
               font-size: $smallFontSize;
-              a:link {color: $mediumDarkFontColor;}
-              a:visited {color: $mediumDarkFontColor;}
-              a:hover {color: $lightFontColor;}
-              a:active {color: $lightFontColor;}
+              a:link {color: $lightFontColor;}
+              a:visited {color: $lightFontColor;}
+              a:hover {color: $mediumDarkFontColor;}
+              a:active {color: $mediumDarkFontColor;}
             }
-            .p-four {@include animation($animationDurationLong, $animationTimeFifth, easeRotateInLeft);}
+            .p-four {
+              @include animation($animationDurationLong, $animationTimeFifth, easeRotateInLeft);
+              display:block;
+            }
           }
         }
       }//me-container
       .me-image {
         margin-top: -$offsetHintVertical;
         .me-picture{
+          opacity: 0;
+          @include animation($animationDurationLong, $animationTimeFourth, easeUp);
           @include breakpoint(md) {
             text-align: center;
           }
           img {
-            opacity: 0;
             width: 100%;
             max-width: 100%;
             max-height: 100%;
-            @include animation($animationDurationLong, $animationTimeFourth, easeUp);
             @include breakpoint(md) {
               width: 100%;
             }
           }
+          .picture-caption {
+            margin-top: $buffer*2;
+            color: $mediumDarkFontColor;
+            font-size: $smallFontSize;
+            text-align: center;
+          }
         }//me-picture
-      }
+      }//me-image
     }//me-page
   }//page-container
 } //body
