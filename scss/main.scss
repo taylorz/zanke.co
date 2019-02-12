@@ -40,7 +40,6 @@ body {
         #background {
           transform: translateY(-100%) !important;
         }
-        
       }
       &[data-transition=backgroundDarkDown] {
         #background {
@@ -78,16 +77,15 @@ body {
         z-index: 2;
         position: absolute;
         width: 100%;
-        .nav-items {;
-          text-align: right;
+        .nav-items {
+          .nav-left {text-align:left;}
+          .nav-right {text-align:right;}
           @include breakpoint(xs) {
             text-align: left;
           }
           .nav-icon {
             font-size: $smallFontSize;
-            opacity: 0;
             text-align: right;
-            @include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);
           }
         }
       }
@@ -96,6 +94,8 @@ body {
       z-index: 0;
       .nav-container {
         .nav-items {
+          opacity: 0;
+          @include animation($animationDurationLong, $animationTimeFourth, easeRotateInLeft);
           .nav-icon {
             a:link {color: $primaryFontColor;}
             a:visited {color: $primaryFontColor;}
@@ -175,12 +175,30 @@ body {
         }//work-preview
       }//works-container
     }//index-page
+    .work-page {
+      background: $bgColorLight;
+      .nav-container {
+        .nav-items {
+          opacity: 0;
+          @include animation($animationDurationLong, $animationTimeFirst, easeDown);
+          .nav-icon {}
+        }
+      }//nav-container
+      .work-hero-container {
+        height: 90vh;
+        background: $bgColorMedium;
+      }
+    }
+
+
     .me-page {
       background: $bgColorDark;
       z-index: 100;
       position: absolute;
       .nav-container {
         .nav-items {
+          opacity: 0;
+          @include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);
           .nav-icon {
             a:link {color: $lightFontColor;}
             a:visited {color: $lightFontColor;}
