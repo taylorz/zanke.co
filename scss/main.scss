@@ -24,7 +24,7 @@ body {
       &[data-transition=backgroundDarkUp] {
         #background {
           @include animation($animationDurationMiddle, $animationTimeSecond, backgroundShutter);
-          -webkit-animation-timing-function: cubic-bezier(0.5,0,0.5,1);
+          -webkit-animation-timing-function: cubic-bezier(1,0,0.5,1);
           animation-direction: reverse !important;
         }
         .container-fluid {
@@ -36,18 +36,20 @@ body {
           }
         }
       }
-      #background {
-        @include animation($animationDurationMiddle, $animationTimeSecond, backgroundShutter);
-        -webkit-animation-timing-function: cubic-bezier(0.5,0,0.5,1);
-      }
-      .container-fluid {
-        @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
-        animation-direction: reverse !important;
-        .hero-container *, .me-container *, .works-container * {
-          animation: none !important;
-          opacity: 1 !important;
+      
+        #background {
+          @include animation($animationDurationMiddle, $animationTimeSecond, backgroundShutter);
+          -webkit-animation-timing-function: cubic-bezier(1,0,0.5,1);
         }
-      }
+        .container-fluid {
+          @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
+          animation-direction: reverse !important;
+          .hero-container *, .me-container *, .works-container * {
+            animation: none !important;
+            opacity: 1 !important;
+          }
+        }
+
     }//is-exiting
     .container-fluid {
       padding: 0;
@@ -67,9 +69,9 @@ body {
         font-family: $primaryFont;
       }
       section.nav-container {
-        z-index: 100;
+        z-index: 2;
         position: absolute;
-        width: 100vw;
+        width: 100%;
         .nav-items {;
           text-align: right;
           @include breakpoint(xs) {
@@ -94,7 +96,6 @@ body {
             a:hover {color: $mediumFontColor;}
             a:active {color: $mediumFontColor;}
             text-align: right;
-            @include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);
           }
         }
       }
@@ -138,11 +139,17 @@ body {
           bottom: $offsetHintVertical;
           opacity: 0;
           @include animation($animationDurationLong, $animationTimeSixth, easeRotateIn);
+          @include breakpoint(sm) {
+            bottom: $offsetHintVertical*2;
+          }
         }
       } //hero-container
       .works-container {
         background-color: $bgColorLight;
         margin-top: -$offsetHintVertical;
+        @include breakpoint(sm) {
+          margin-top: -$offsetHintVertical*2;
+        }
         position: relative;
         .work-preview {
           margin-bottom: $buffer*10;
@@ -152,9 +159,12 @@ body {
           &:first-child {
             @include animation($animationDurationLong, $animationTimeFourth, easeUp);
           }
-          .work-item {
-            height: 90vh;
-            background: $bgColorMedium;
+          a.work-hero-link {
+            width: 100%;
+            .work-item {
+              height: 90vh;
+              background: $bgColorMedium;
+            }
           }
         }//work-preview
       }//works-container
@@ -171,7 +181,6 @@ body {
             a:hover {color: $mediumDarkFontColor;}
             a:active {color: $mediumDarkFontColor;}
             text-align: right;
-            @include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);
           }
         }
       }
@@ -194,9 +203,14 @@ body {
           }
         }//me-materials
         .me-contact {
-          width: 100%;
+          // width: 500%;
+          // width: 100%;
+          width: 80vw;
           position: absolute;
           bottom: $offsetHintVertical;
+          @include breakpoint(sm) {
+            bottom: $offsetHintVertical*2;
+          }
           .contact-info {
             color: $mediumDarkFontColor;
             p {
@@ -216,6 +230,9 @@ body {
       }//me-container
       .me-image {
         margin-top: -$offsetHintVertical;
+        @include breakpoint(sm) {
+          margin-top: -$offsetHintVertical*2;
+        }
         .me-picture{
           opacity: 0;
           @include animation($animationDurationLong, $animationTimeFourth, easeUp);

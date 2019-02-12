@@ -16,13 +16,13 @@ $('document').ready(function(){
               onBefore: function($anchor, $container) {
                   var current = $('[data-viewport]').first().data('viewport'),
                       target = $anchor.data('target');
-                  current = current ? current : 0;
-                  target = target ? target : 0;
+                      current = current ? current : 0;
+                      target = target ? target : 0;
                   if (current === target) {
                       transition = 'fade';
                   } else if (current < target) {
                       transition = 'backgroundDarkDown';
-                  } else {
+                  } else if (current > target) {
                       transition = 'backgroundDarkUp';
                   }
               },
