@@ -44,6 +44,16 @@
     opacity: 1;
   }
 }
+@keyframes easeRotateInLeft {
+  0% {
+    transform: rotate(1deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
 @keyframes easeUp {
   0% {
     transform: translateY($buffer*2);

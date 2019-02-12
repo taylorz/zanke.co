@@ -66,19 +66,50 @@ body {
         color: $primaryFontColor;
         font-family: $primaryFont;
       }
+      section.nav-container {
+        z-index: 100;
+        position: absolute;
+        width: 100vw;
+        .nav-items {;
+          text-align: right;
+          @include breakpoint(xs) {
+            text-align: left;
+          }
+          .nav-icon {
+            font-size: $smallFontSize;
+            opacity: 0;
+            text-align: right;
+            @include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);
+          }
+        }
+      }
     }//container-fluid
     .index-page {
       z-index: 0;
+      .nav-container {
+        .nav-items {
+          .nav-icon {
+            a:link {color: $primaryFontColor;}
+            a:visited {color: $primaryFontColor;}
+            a:hover {color: $mediumFontColor;}
+            a:active {color: $mediumFontColor;}
+            text-align: right;
+            @include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);
+          }
+        }
+      }
       .hero-container {
         height: 100vh;
-        // background-color: $bgColorLight;
+        display: flex;
         .hero-text {
+          width: 100%;
           @include animation($animationDurationLong, $animationTimeFirst, easeUp);
           @include breakpoint(md) {
             font-size: $primaryFontSize*.8;
             line-height: $primaryFontLineHeight*.8;
           }
           @include breakpoint(xs) {
+            align-items: center;
             opacity: 0;
           }
           span {
@@ -101,7 +132,8 @@ body {
           }
         }//hero-subtext
         .hero-subtext {
-          color: $lightFontColor;
+          color: $mediumFontColor;
+          font-size: $smallFontSize;
           position: absolute;
           bottom: $offsetHintVertical;
           opacity: 0;
@@ -130,44 +162,66 @@ body {
       background: $bgColorDark;
       z-index: 100;
       position: absolute;
+      .nav-container {
+        .nav-items {
+          .nav-icon {
+            a:link {color: $lightFontColor;}
+            a:visited {color: $lightFontColor;}
+            a:hover {color: $mediumDarkFontColor;}
+            a:active {color: $mediumDarkFontColor;}
+            text-align: right;
+            @include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);
+          }
+        }
+      }
       .me-container {
+        height: 100vh;
         .me-materials {
-          height: 100%;
+          @include breakpoint(xs) {
+            margin-top: $offsetHintVertical;
+          }
           .about-me {
-            padding-bottom: $buffer*5;
             color: $lightFontColor;
             @include animation($animationDurationLong, $animationTimeFirst, easeDown);
             p {
               margin-bottom: $buffer*2;
               opacity: 0;
             }
-            .p-one {@include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);}
-            .p-two {@include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);}
-            .p-three {@include animation($animationDurationLong, $animationTimeThird, easeRotateIn);}
-            .p-four {@include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);}
-            .p-five {@include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);}
+            .p-one {@include animation($animationDurationLong, $animationTimeFirst, easeRotateInLeft);}
+            .p-two {@include animation($animationDurationLong, $animationTimeSecond, easeRotateInLeft);}
+            .p-three {@include animation($animationDurationLong, $animationTimeThird, easeRotateInLeft);}
           }
-          .picture-me{
-            // height: 100%;
-            // display: flex;
-            // justify-content: flex-end;
-            // align-items: center;
-            // text-align: right;
-            width: 100%;
-            @include breakpoint(md) {
-              text-align: center;
-            }
-            img {
-              opacity: 0;
-              max-width: 100%;
-              max-height:100%;
-              @include animation($animationDurationLong, $animationTimeSecond, easeUp);
-              @include breakpoint(md) {
-                width: 100%;
-              }
-            }
-          }//picture-me
         }//me-materials
+        .me-contact {
+          position: absolute;
+          bottom: $offsetHintVertical;
+          .contact-info {
+            color: $lightFontColor;
+            p {
+              opacity: 0;
+              font-size: $smallFontSize;
+            }
+            .p-four {@include animation($animationDurationLong, $animationTimeFifth, easeRotateInLeft);}
+          }
+        }
+      }//me-container
+      .me-image {
+        margin-top: -$offsetHintVertical;
+        .me-picture{
+          @include breakpoint(md) {
+            text-align: center;
+          }
+          img {
+            opacity: 0;
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            @include animation($animationDurationLong, $animationTimeFourth, easeUp);
+            @include breakpoint(md) {
+              width: 100%;
+            }
+          }
+        }//me-picture
       }
     }//me-page
   }//page-container

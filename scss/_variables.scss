@@ -11,9 +11,12 @@ $primaryFontColor:          $bgColorDark;
 $largeFontSize:             $primaryFontSize*1.5;
 $largeFontLineHeight:       $primaryFontLineHeight*1.5;
 
+$smallFontSize:             $primaryFontSize*.75;
+$smallFontLineHeight:       $primaryFontLineHeight*.75;
 
 $lightFontColor:            #fafafa;
 $mediumFontColor:           #cccccc;
+$mediumDarkFontColor:       #4E4E4a;
 
 $linkColor:                 $primaryFontColor;
 $linkBorderColor:           #eeeeee;
