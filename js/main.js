@@ -25,7 +25,7 @@ $('document').ready(function(){
                   }
               },
               onStart: {
-                  duration: 1000,
+                  duration: 750,
                   render: function (url, $container) {
                       $main.attr('data-transition', transition);
                       $main.addClass('is-exiting');
