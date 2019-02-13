@@ -157,9 +157,6 @@ body {
         text-align: left; }
       body .page-container .container-fluid section.nav-container .nav-items .nav-right {
         text-align: right; }
-        @media (max-width: 767px) {
-          body .page-container .container-fluid section.nav-container .nav-items .nav-right {
-            text-align: left; } }
       body .page-container .container-fluid section.nav-container .nav-items .nav-icon {
         font-size: 15.4px;
         text-align: right; }
@@ -245,6 +242,7 @@ body {
         opacity: 0;
         animation: 0.75s ease-out 0s 1 easeRotateIn forwards; }
       body .page-container .work-page .nav-container .nav-items .nav-right {
+        text-align: right;
         opacity: 0;
         animation: 0.75s ease-out 0.25s 1 easeRotateIn forwards; }
       body .page-container .work-page .nav-container .nav-items .nav-icon {

@@ -29,7 +29,6 @@ $('document').ready(function(){
                     $([document.documentElement, document.body]).animate({
                         scrollTop: $($anchor).offset().top
                     }, 250);
-                    // $site.animate({scrollTop: 0});
                     // transition = 'backgroundDarkDown';
                   }
               },
@@ -47,6 +46,7 @@ $('document').ready(function(){
                       $container.html($newContent);
                       $container.removeClass('is-exiting');
                       AOS.init();
+                      $site.animate({scrollTop: 0});
                   }
               },
           }).data('smoothState');
