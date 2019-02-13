@@ -28,7 +28,7 @@ $('document').ready(function(){
                     transition = 'imageBecomesHero';
                     $([document.documentElement, document.body]).animate({
                         scrollTop: $($anchor).offset().top
-                    }, 250);
+                    }, 250, "swing");
                     // transition = 'backgroundDarkDown';
                   }
               },
@@ -44,8 +44,8 @@ $('document').ready(function(){
                   render: function ($container, $newContent) {
                       $container.html($newContent);
                       $container.removeClass('is-exiting');
-                      $site.animate({scrollTop: 0});
                       AOS.init();
+                      $site.animate({scrollTop: 0});
                   }
               },
           }).data('smoothState');
