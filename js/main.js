@@ -37,7 +37,6 @@ $('document').ready(function(){
                   render: function (url, $container) {
                       $main.attr('data-transition', transition);
                       $main.addClass('is-exiting');
-                      // $site.animate({scrollTop: 0});
                   }
               },
               onReady: {
@@ -45,8 +44,8 @@ $('document').ready(function(){
                   render: function ($container, $newContent) {
                       $container.html($newContent);
                       $container.removeClass('is-exiting');
-                      AOS.init();
                       $site.animate({scrollTop: 0});
+                      AOS.init();
                   }
               },
           }).data('smoothState');

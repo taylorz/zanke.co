@@ -92,6 +92,9 @@ body {
           .nav-left {text-align:left;}
           .nav-right {
             text-align:right;
+            @include breakpoint(xs) {
+              text-align: left;
+            }
           }
           .nav-icon {
             font-size: $smallFontSize;
@@ -196,7 +199,9 @@ body {
             @include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);
           }
           .nav-right {
-            text-align: right;
+            @include breakpoint(xs) {
+            text-align: right !important;  
+            }
             opacity: 0;
             @include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);
           }
