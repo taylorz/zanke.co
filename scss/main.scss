@@ -30,7 +30,7 @@ body {
         .container-fluid {
           @include animation($animationDurationSnappy, $animationTimeFirst, easeDown);
           animation-direction: reverse !important;
-          .hero-container *, .me-container *, .works-container * {
+          .hero-container *, .me-container *, .works-container *, .work-artifacts * {
             animation: none !important;
             opacity: 1 !important;
           }
@@ -60,7 +60,7 @@ body {
         .container-fluid {
           @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
           animation-direction: reverse !important;
-          .hero-container *, .me-container *, .works-container * {
+          .hero-container *, .me-container *, .works-container *, .work-artifacts * {
             animation: none !important;
             opacity: 1 !important;
           }
@@ -212,15 +212,23 @@ body {
         }
       }//nav-container
       .work-hero-container {
-        opacity: 1;
         height: 80vh;
-        width: 100%;
+        // width: 100%;
         background: $bgColorMedium;
+        .hero-artifact {
+          .hero-artifact-image {}
+        }
       }
       .work-artifacts {
-        position: relative;
-        opacity: 0;
-        @include animation($animationDurationLong, $animationTimeThird, easeUp);
+        // position: relative;
+        .artifact-plate {
+          opacity: 0;
+          @include animation($animationDurationLong, $animationTimeThird, easeUp);
+          .plate-image {
+          }
+          .plate-text {
+          }
+        }
       }
     }
 
