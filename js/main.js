@@ -25,7 +25,8 @@ $('document').ready(function(){
                   } else if (target === 0) {
                       transition = 'backgroundDarkUp';
                   } else if (target === -1) {
-                    transition = 'imageBecomesHero';
+                    // transition = 'imageBecomesHero';
+                    transition = 'backgroundDarkDown';
                   }
               },
               onStart: {
@@ -33,7 +34,7 @@ $('document').ready(function(){
                   render: function (url, $container) {
                       $main.attr('data-transition', transition);
                       $main.addClass('is-exiting');
-                      $site.animate({scrollTop: 0});
+                      // $site.animate({scrollTop: 0});
                   }
               },
               onReady: {
