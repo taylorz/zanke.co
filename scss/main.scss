@@ -43,7 +43,7 @@ body {
         .container-fluid {
           .works-container {
             padding-left: 0; padding-right: 0;
-            transition: all 1s;
+            transition: all 1s ease;
             z-index: 100 !important;
           }
           .hero-container * {
@@ -182,6 +182,10 @@ body {
           a.work-hero-link {
             width: 100%;
             .work-item {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: $buffer*5;
               height: 80vh;
               background: $bgColorMedium;
             }
@@ -200,7 +204,7 @@ body {
           }
           .nav-right {
             @include breakpoint(xs) {
-            text-align: right !important;  
+            text-align: right !important;
             }
             opacity: 0;
             @include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);
@@ -216,6 +220,9 @@ body {
       }//nav-container
       .work-hero-container {
         height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         // width: 100%;
         background: $bgColorMedium;
         .hero-artifact {
