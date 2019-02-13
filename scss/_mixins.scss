@@ -94,6 +94,20 @@
     transform: translateY(0);
   }
 }
+// 
+// @keyframes workToCase {
+//   0% {
+//     position: absolute !important;
+//     padding: 0 !important;
+//   }
+//   50% {
+//     position: absolute !important;
+//     width: 100vw !important;
+//   }
+//   100% {
+//     top: 0;
+//   }
+// }
 
 @mixin animation($duration, $delay, $animation) {
   animation: $duration ease-out $delay 1 $animation forwards;

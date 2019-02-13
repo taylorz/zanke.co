@@ -25,8 +25,12 @@ $('document').ready(function(){
                   } else if (target === 0) {
                       transition = 'backgroundDarkUp';
                   } else if (target === -1) {
-                    // transition = 'imageBecomesHero';
-                    transition = 'backgroundDarkDown';
+                    transition = 'imageBecomesHero';
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $($anchor).offset().top
+                    }, 250);
+                    // $site.animate({scrollTop: 0});
+                    // transition = 'backgroundDarkDown';
                   }
               },
               onStart: {

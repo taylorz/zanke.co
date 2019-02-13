@@ -40,6 +40,17 @@ body {
         #background {
           transform: translateY(-100%) !important;
         }
+        .container-fluid {
+          .works-container {
+            padding-left: 0; padding-right: 0;
+            transition: all 1s;
+            z-index: 100 !important;
+          }
+          .hero-container * {
+            animation: none !important;
+            opacity: 0 !important;
+          }
+        }
       }
       &[data-transition=backgroundDarkDown] {
         #background {
@@ -153,6 +164,7 @@ body {
         }
       } //hero-container
       .works-container {
+        width: 100%;
         background-color: $bgColorLight;
         margin-top: -$offsetHintVertical;
         @include breakpoint(sm) {
@@ -170,7 +182,7 @@ body {
           a.work-hero-link {
             width: 100%;
             .work-item {
-              height: 90vh;
+              height: 80vh;
               background: $bgColorMedium;
             }
           }
@@ -200,10 +212,15 @@ body {
         }
       }//nav-container
       .work-hero-container {
-        opacity: 0;
-        @include animation($animationDurationLong, $animationTimeFirst, easeDown);
+        opacity: 1;
         height: 80vh;
+        width: 100%;
         background: $bgColorMedium;
+      }
+      .work-artifacts {
+        position: relative;
+        opacity: 0;
+        @include animation($animationDurationLong, $animationTimeThird, easeUp);
       }
     }
 
