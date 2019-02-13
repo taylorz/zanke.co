@@ -149,9 +149,9 @@ body {
         text-align: left; }
       body .page-container .container-fluid section.nav-container .nav-items .nav-right {
         text-align: right; }
-      @media (max-width: 767px) {
-        body .page-container .container-fluid section.nav-container .nav-items {
-          text-align: left; } }
+        @media (max-width: 767px) {
+          body .page-container .container-fluid section.nav-container .nav-items .nav-right {
+            text-align: left; } }
       body .page-container .container-fluid section.nav-container .nav-items .nav-icon {
         font-size: 16.5px;
         text-align: right; }
@@ -230,12 +230,24 @@ body {
             background: #f5f5f5; }
   body .page-container .work-page {
     background: #ffffff; }
-    body .page-container .work-page .nav-container .nav-items .nav-left {
-      opacity: 0;
-      animation: 0.75s ease-out 0.25s 1 easeDown forwards; }
-    body .page-container .work-page .nav-container .nav-items .nav-right {
-      opacity: 0;
-      animation: 0.75s ease-out 0.5s 1 easeDown forwards; }
+    body .page-container .work-page .nav-container .nav-items {
+      animation: 0.75s ease-out 0s 1 easeDown forwards; }
+      body .page-container .work-page .nav-container .nav-items .nav-left {
+        opacity: 0;
+        animation: 0.75s ease-out 0s 1 easeRotateIn forwards; }
+      body .page-container .work-page .nav-container .nav-items .nav-right {
+        opacity: 0;
+        animation: 0.75s ease-out 0.25s 1 easeRotateIn forwards; }
+      body .page-container .work-page .nav-container .nav-items .nav-icon {
+        text-align: right; }
+        body .page-container .work-page .nav-container .nav-items .nav-icon a:link {
+          color: #cccccc; }
+        body .page-container .work-page .nav-container .nav-items .nav-icon a:visited {
+          color: #cccccc; }
+        body .page-container .work-page .nav-container .nav-items .nav-icon a:hover {
+          color: #11111a; }
+        body .page-container .work-page .nav-container .nav-items .nav-icon a:active {
+          color: #11111a; }
     body .page-container .work-page .work-hero-container {
       opacity: 0;
       animation: 0.75s ease-out 0s 1 easeDown forwards;
@@ -262,7 +274,7 @@ body {
       height: 100vh; }
       @media (max-width: 767px) {
         body .page-container .me-page .me-container {
-          height: 120vh; } }
+          height: 150vh; } }
       @media (max-width: 767px) {
         body .page-container .me-page .me-container .me-materials {
           margin-top: 10vw; } }
@@ -270,7 +282,7 @@ body {
         color: #fafafa;
         animation: 0.75s ease-out 0s 1 easeDown forwards; }
         body .page-container .me-page .me-container .me-materials .about-me p {
-          margin-bottom: 2vw;
+          margin-bottom: 5vw;
           opacity: 0; }
         body .page-container .me-page .me-container .me-materials .about-me .p-one {
           animation: 0.75s ease-out 0s 1 easeRotateInLeft forwards; }
@@ -324,3 +336,7 @@ body {
           color: #44444A;
           font-size: 16.5px;
           text-align: center; }
+          @media (max-width: 767px) {
+            body .page-container .me-page .me-image .me-picture .picture-caption {
+              text-align: left;
+              margin-top: 10vw; } }

@@ -79,15 +79,17 @@ body {
         width: 100%;
         .nav-items {
           .nav-left {text-align:left;}
-          .nav-right {text-align:right;}
-          @include breakpoint(xs) {
-            text-align: left;
+          .nav-right {
+            text-align:right;
+            @include breakpoint(xs) {
+              text-align: left;
+            }
           }
           .nav-icon {
             font-size: $smallFontSize;
             text-align: right;
           }
-        }
+        }//nav-items
       }
     }//container-fluid
     .index-page {
@@ -179,15 +181,22 @@ body {
       background: $bgColorLight;
       .nav-container {
         .nav-items {
+          @include animation($animationDurationLong, $animationTimeFirst, easeDown);
           .nav-left {
             opacity: 0;
-            @include animation($animationDurationLong, $animationTimeSecond, easeDown);
+            @include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);
           }
           .nav-right {
             opacity: 0;
-            @include animation($animationDurationLong, $animationTimeThird, easeDown);
+            @include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);
           }
-          .nav-icon {}
+          .nav-icon {
+            a:link {color: $mediumFontColor;}
+            a:visited {color: $mediumFontColor;}
+            a:hover {color: $primaryFontColor;}
+            a:active {color: $primaryFontColor;}
+            text-align: right;
+          }
         }
       }//nav-container
       .work-hero-container {
@@ -219,7 +228,7 @@ body {
       .me-container {
         height: 100vh;
         @include breakpoint(xs) {
-          height: 120vh;
+          height: 150vh;
         }
         .me-materials {
           @include breakpoint(xs) {
@@ -229,7 +238,7 @@ body {
             color: $lightFontColor;
             @include animation($animationDurationLong, $animationTimeFirst, easeDown);
             p {
-              margin-bottom: $buffer*2;
+              margin-bottom: $buffer*5;
               opacity: 0;
             }
             .p-one {@include animation($animationDurationLong, $animationTimeFirst, easeRotateInLeft);}
@@ -287,6 +296,10 @@ body {
             color: $mediumDarkFontColor;
             font-size: $smallFontSize;
             text-align: center;
+            @include breakpoint(xs){
+              text-align: left;
+              margin-top: $buffer*10;
+            }
           }
         }//me-picture
       }//me-image
