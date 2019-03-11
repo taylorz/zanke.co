@@ -54,8 +54,6 @@ body {
             -webkit-transition-timing-function: cubic-bezier(1,0,0.25,1);
             z-index: 100 !important;
             .work-hero-link {
-              background: $bgColorMedium !important;
-              transition: all .25;
               .work-item {
                 transition: all .75s;
                 opacity: 1 !important;
@@ -63,6 +61,10 @@ body {
               .work-title {
                 transition: all .75s;
                 opacity: 0 !important;
+                h1 {
+                  opacity: 0;
+                  transition: all .25s;
+                }
               }
             }
           }
@@ -227,7 +229,7 @@ body {
               }
             }
             &:hover {
-              background: $bgColorDark;
+              // background: $bgColorLight;
               @include transition;
               .work-item {
                 opacity: .1;
@@ -235,11 +237,11 @@ body {
               }
               .work-title {
                 opacity: 1;
-                color: $lightFontColor;
                 @include transition;
-                h1 {
-                  @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
-                }
+                @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
+                // h1 {
+                //   @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
+                // }
               }
             }
           }
