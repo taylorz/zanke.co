@@ -8,7 +8,11 @@ body {
   background-color: $bgColorLight;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+  ::selection {
+  background: blue; /* WebKit/Blink Browsers */
+}
   .page-container {
+    -webkit-backface-visibility: hidden !important;
     #background {
       height: 100vh;
       width: 100%;
@@ -24,7 +28,7 @@ body {
       &[data-transition=backgroundDarkUp] {
         #background {
           @include animation($animationDurationMiddle, $animationTimeSecond, backgroundShutter);
-          -webkit-animation-timing-function: cubic-bezier(1,0,0.5,1);
+          -webkit-animation-timing-function: cubic-bezier(.4,0,0.2,1);
           animation-direction: reverse !important;
         }
         .container-fluid {
@@ -41,10 +45,26 @@ body {
           transform: translateY(-100%) !important;
         }
         .container-fluid {
+          visibility: hidden !important; //weird fix for DOM loading flash--not sure if works?
           .works-container {
+            opacity: 1;
+            background: $bgColorLight;
             padding-left: 0; padding-right: 0;
-            transition: all 1s ease;
+            transition: all .75s;
+            -webkit-transition-timing-function: cubic-bezier(1,0,0.25,1);
             z-index: 100 !important;
+            .work-hero-link {
+              background: $bgColorMedium !important;
+              transition: all .25;
+              .work-item {
+                transition: all .75s;
+                opacity: 1 !important;
+              }
+              .work-title {
+                transition: all .75s;
+                opacity: 0 !important;
+              }
+            }
           }
           .hero-container * {
             animation: none !important;
@@ -55,7 +75,7 @@ body {
       &[data-transition=backgroundDarkDown] {
         #background {
           @include animation($animationDurationMiddle, $animationTimeSecond, backgroundShutter);
-          -webkit-animation-timing-function: cubic-bezier(1,0,0.5,1);
+          -webkit-animation-timing-function: cubic-bezier(.4,0,0.2,1);
         }
         .container-fluid {
           @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
@@ -85,9 +105,10 @@ body {
         font-family: $primaryFont;
       }
       section.nav-container {
-        z-index: 2;
+        z-index: 1;
         position: absolute;
         width: 100%;
+        pointer-events: none;
         .nav-items {
           .nav-left {text-align:left;}
           .nav-right {
@@ -97,6 +118,7 @@ body {
             }
           }
           .nav-icon {
+            pointer-events: auto;
             font-size: $smallFontSize;
             text-align: right;
           }
@@ -123,6 +145,7 @@ body {
         display: flex;
         .hero-text {
           width: 100%;
+          opacity: 0;
           @include animation($animationDurationLong, $animationTimeFirst, easeUp);
           @include breakpoint(md) {
             font-size: $primaryFontSize*.8;
@@ -181,13 +204,43 @@ body {
           }
           a.work-hero-link {
             width: 100%;
+            background: $bgColorMedium;
+            @include transition;
             .work-item {
               display: flex;
               align-items: center;
               justify-content: center;
               padding: $buffer*5;
               height: 80vh;
-              background: $bgColorMedium;
+              @include transition;
+            }
+            .work-title {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 80vh;
+              margin-top: -80vh;
+              opacity: 0;
+              @include transition;
+              h1 {
+                font-size: $xlargeFontSize;
+              }
+            }
+            &:hover {
+              background: $bgColorDark;
+              @include transition;
+              .work-item {
+                opacity: .1;
+                @include transition;
+              }
+              .work-title {
+                opacity: 1;
+                color: $lightFontColor;
+                @include transition;
+                h1 {
+                  @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
+                }
+              }
             }
           }
         }//work-preview
@@ -223,7 +276,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        // width: 100%;
+        width: 100%;
         background: $bgColorMedium;
         .hero-artifact {
           .hero-artifact-image {}

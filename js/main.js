@@ -28,8 +28,13 @@ $('document').ready(function(){
                     transition = 'imageBecomesHero';
                     $([document.documentElement, document.body]).animate({
                         scrollTop: $($anchor).offset().top
-                    }, 250, "swing");
-                    // transition = 'backgroundDarkDown';
+                    }, 250, $.easie(.5,0,0.2,1.0));
+                  }
+              },
+              onProgress : {
+                  duration: 0, // Duration of the animations, if any.
+                  render: function (url, $container) {
+                      $('container').hide();
                   }
               },
               onStart: {
