@@ -262,7 +262,7 @@ body {
             text-align: right !important;
             }
             opacity: 0;
-            @include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);
+            @include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);
           }
           .nav-icon {
             a:link {color: $mediumFontColor;}
@@ -288,7 +288,7 @@ body {
         // position: relative;
         .artifact-plate {
           opacity: 0;
-          @include animation($animationDurationLong, $animationTimeSecond, easeUp);
+          @include animation($animationDurationLong, $animationTimeThird, easeUp);
           .plate-image {
           }
           .plate-text {
