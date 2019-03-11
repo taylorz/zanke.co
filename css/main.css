@@ -370,6 +370,9 @@ body {
           body .page-container .me-page .me-container .me-materials .about-me p {
             margin-bottom: 5vw;
             opacity: 0; }
+            @media (max-width: 992px) {
+              body .page-container .me-page .me-container .me-materials .about-me p {
+                margin-bottom: 3vw; } }
           body .page-container .me-page .me-container .me-materials .about-me .p-one {
             animation: 0.75s ease-out 0s 1 easeRotateInLeft forwards; }
           body .page-container .me-page .me-container .me-materials .about-me .p-two {

@@ -341,6 +341,9 @@ body {
             p {
               margin-bottom: $buffer*5;
               opacity: 0;
+              @include breakpoint(md) {
+                margin-bottom: $buffer*3;
+              }
             }
             .p-one {@include animation($animationDurationLong, $animationTimeFirst, easeRotateInLeft);}
             .p-two {@include animation($animationDurationLong, $animationTimeSecond, easeRotateInLeft);}
