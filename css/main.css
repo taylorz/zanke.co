@@ -311,7 +311,7 @@ body {
           animation: 0.75s ease-out 0s 1 easeRotateIn forwards; }
         body .page-container .work-page .nav-container .nav-items .nav-right {
           opacity: 0;
-          animation: 0.75s ease-out 0.25s 1 easeRotateIn forwards; }
+          animation: 0.75s ease-out 0s 1 easeRotateIn forwards; }
           @media (max-width: 767px) {
             body .page-container .work-page .nav-container .nav-items .nav-right {
               text-align: right !important; } }
@@ -334,7 +334,7 @@ body {
         background: #f5f5f5; }
       body .page-container .work-page .work-artifacts .artifact-plate {
         opacity: 0;
-        animation: 0.75s ease-out 0.5s 1 easeUp forwards; }
+        animation: 0.75s ease-out 0.25s 1 easeUp forwards; }
     body .page-container .me-page {
       background: #11111a;
       z-index: 100;
