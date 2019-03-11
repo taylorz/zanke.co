@@ -285,10 +285,21 @@ body {
         }
       }
       .work-artifacts {
-        // position: relative;
+        opacity: 1;
+        div:first-child {
+          opacity: 0;
+          @include animation($animationDurationLong, $animationTimeSecond, easeUp);
+        }
         .artifact-plate {
           opacity: 0;
-          @include animation($animationDurationLong, $animationTimeThird, easeUp);
+            // .plate-left {
+            //   opacity: 0;
+            //   @include animation($animationDurationLong, $animationTimeSecond, easeUp);
+            // }
+            // .plate-right {
+            //   opacity: 0;
+            //   @include animation($animationDurationLong, $animationTimeThird, easeUp);
+            // }
           .plate-image {
           }
           .plate-text {
