@@ -292,23 +292,38 @@ body {
           &.work-title {
             opacity: 0;
             height: $workItemHeight/1.5;
+            @include breakpoint(xs) {
+              height: auto;
+            }
           }
           .plate-image {
             height: $workPlateHeight;
             background: $lightBluePlateMatte;
             // background: $lightPurplePlateMatte;
+            @include breakpoint(xs) {
+              height: 60vh;
+            }
 
           }
           .plate-text {
             display: flex;
             align-items: center;
             justify-content: center;
+            @include breakpoint(xs) {
+              height: $workItemHeight/2;
+            }
             h1 {
               display: block !important;
               line-height: $largeFontLineHeight;
               &.text-quote {
                 text-align: center;
                 width: 60%;
+                @include breakpoint(xs) {
+                  font-size: $largeFontSize*.8;
+                  line-height: $largeFontLineHeight*.8;
+                  width: 100%;
+                  text-align: left;
+                }
                 p {
                   font-size: $primaryFontSize;
                   margin-top: $buffer*3;
@@ -319,6 +334,10 @@ body {
             p {
               &.text-caption {
                 width: 60%;
+                @include breakpoint(xs) {
+                  width: 100%;
+                  text-align: left;
+                }
               }
             }
           }

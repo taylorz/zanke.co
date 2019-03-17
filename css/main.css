@@ -338,25 +338,44 @@ body {
         body .page-container .work-page .work-artifacts .artifact-plate.work-title {
           opacity: 0;
           height: 60vh; }
+          @media (max-width: 767px) {
+            body .page-container .work-page .work-artifacts .artifact-plate.work-title {
+              height: auto; } }
         body .page-container .work-page .work-artifacts .artifact-plate .plate-image {
           height: 100vh;
           background: #F0F2F5; }
+          @media (max-width: 767px) {
+            body .page-container .work-page .work-artifacts .artifact-plate .plate-image {
+              height: 60vh; } }
         body .page-container .work-page .work-artifacts .artifact-plate .plate-text {
           display: flex;
           align-items: center;
           justify-content: center; }
+          @media (max-width: 767px) {
+            body .page-container .work-page .work-artifacts .artifact-plate .plate-text {
+              height: 45vh; } }
           body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1 {
             display: block !important;
             line-height: 57.75px; }
             body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1.text-quote {
               text-align: center;
               width: 60%; }
+              @media (max-width: 767px) {
+                body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1.text-quote {
+                  font-size: 26.4px;
+                  line-height: 46.2px;
+                  width: 100%;
+                  text-align: left; } }
               body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1.text-quote p {
                 font-size: 22px;
                 margin-top: 3vw;
                 color: #ccccca; }
           body .page-container .work-page .work-artifacts .artifact-plate .plate-text p.text-caption {
             width: 60%; }
+            @media (max-width: 767px) {
+              body .page-container .work-page .work-artifacts .artifact-plate .plate-text p.text-caption {
+                width: 100%;
+                text-align: left; } }
       body .page-container .work-page .work-footer {
         font-size: 15.4px;
         line-height: 26.95px;
