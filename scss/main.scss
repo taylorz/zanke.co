@@ -1,4 +1,4 @@
- @import "variables.scss";
+@import "variables.scss";
 @import "fonts.scss";
 @import "mixins.scss";
 @import "bootstrap-overrides.scss";
@@ -8,9 +8,9 @@ body {
   background-color: $bgColorLight;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  ::selection {
-  background: blue; /* WebKit/Blink Browsers */
-}
+//   ::selection {
+//   background: $bgColorMedium;
+// }
   .page-container {
     -webkit-backface-visibility: hidden !important;
     #background {
@@ -154,7 +154,8 @@ body {
             line-height: $primaryFontLineHeight*.8;
           }
           @include breakpoint(xs) {
-            align-items: center;
+            // align-items: center;
+            margin-top: $offsetHintVertical*6;
             opacity: 0;
           }
           span {
@@ -213,15 +214,15 @@ body {
               align-items: center;
               justify-content: center;
               padding: $buffer*5;
-              height: 80vh;
+              height: $workItemHeight;
               @include transition;
             }
             .work-title {
               display: flex;
               align-items: center;
               justify-content: center;
-              height: 80vh;
-              margin-top: -80vh;
+              height: $workItemHeight;
+              margin-top: -$workItemHeight;
               opacity: 0;
               @include transition;
               h1 {
@@ -239,9 +240,6 @@ body {
                 opacity: 1;
                 @include transition;
                 @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
-                // h1 {
-                //   @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
-                // }
               }
             }
           }
@@ -274,7 +272,7 @@ body {
         }
       }//nav-container
       .work-hero-container {
-        height: 80vh;
+        height: $workItemHeight;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -285,24 +283,63 @@ body {
         }
       }
       .work-artifacts {
-        opacity: 1;
-        div:first-child {
-          opacity: 0;
-          @include animation($animationDurationLong, $animationTimeSecond, easeUp);
-        }
         .artifact-plate {
+          @include breakpoint(xs) {
+            padding:0 $buffer*5;
+          }
           opacity: 0;
-            // .plate-left {
-            //   opacity: 0;
-            //   @include animation($animationDurationLong, $animationTimeSecond, easeUp);
-            // }
-            // .plate-right {
-            //   opacity: 0;
-            //   @include animation($animationDurationLong, $animationTimeThird, easeUp);
-            // }
+          margin-bottom: $buffer*5;
+          &.work-title {
+            opacity: 0;
+            height: $workItemHeight/1.5;
+          }
           .plate-image {
+            height: $workPlateHeight;
+            background: $lightBluePlateMatte;
+            // background: $lightPurplePlateMatte;
+
           }
           .plate-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h1 {
+              display: block !important;
+              line-height: $largeFontLineHeight;
+              &.text-quote {
+                text-align: center;
+                width: 60%;
+                p {
+                  font-size: $primaryFontSize;
+                  margin-top: $buffer*3;
+                  color: $mediumFontColor;
+                }
+              }
+            }
+            p {
+              &.text-caption {
+                width: 60%;
+              }
+            }
+          }
+        }
+      }
+      .work-footer {
+        font-size: $smallFontSize;
+        line-height: $smallFontLineHeight;
+        opacity: 0;
+        // background: $bgColorMedium;
+        .footer-items {
+          margin: $buffer*5 0 $buffer*5 0;
+          // height: $workItemHeight/4;
+          color: $mediumFontColor;
+          display: flex;
+          align-items: flex-start;
+          .items-title {}
+          .items-list {
+            list-style-type: none;
+            padding-left: 0;
+            color: $primaryFontColor;
           }
         }
       }
@@ -329,7 +366,8 @@ body {
       .me-container {
         height: 100vh;
         @include breakpoint(xs) {
-          height: 150vh;
+          height: 120vh;
+          margin-top: $offsetHintVertical*5;
         }
         .me-materials {
           @include breakpoint(xs) {

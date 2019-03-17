@@ -28,7 +28,7 @@ $('document').ready(function(){
                     transition = 'imageBecomesHero';
                     $([document.documentElement, document.body]).animate({
                         scrollTop: $($anchor).offset().top
-                    }, 250, $.easie(.5,0,0.2,1.0));
+                    }, 500, $.easie(.5,0,0.2,1.0));
                   }
               },
               onProgress : {

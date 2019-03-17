@@ -95,9 +95,6 @@ body {
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
-  body ::selection {
-    background: blue;
-    /* WebKit/Blink Browsers */ }
   body .page-container {
     -webkit-backface-visibility: hidden !important; }
     body .page-container #background {
@@ -212,7 +209,7 @@ body {
               line-height: 30.8px; } }
           @media (max-width: 767px) {
             body .page-container .index-page .hero-container .hero-text {
-              align-items: center;
+              margin-top: 60vw;
               opacity: 0; } }
           body .page-container .index-page .hero-container .hero-text span {
             opacity: 0;
@@ -256,7 +253,7 @@ body {
             animation: 0.75s ease-out 0.75s 1 easeUp forwards; }
           body .page-container .index-page .works-container .work-preview a.work-hero-link {
             width: 100%;
-            background: #f5f5f5;
+            background: #fafafa;
             -webkit-transition: all 0.25s ease-in-out;
             -moz-transition: all 0.25s ease-in-out;
             -o-transition: all 0.25s ease-in-out;
@@ -266,7 +263,7 @@ body {
               align-items: center;
               justify-content: center;
               padding: 5vw;
-              height: 80vh;
+              height: 90vh;
               -webkit-transition: all 0.25s ease-in-out;
               -moz-transition: all 0.25s ease-in-out;
               -o-transition: all 0.25s ease-in-out;
@@ -275,8 +272,8 @@ body {
               display: flex;
               align-items: center;
               justify-content: center;
-              height: 80vh;
-              margin-top: -80vh;
+              height: 90vh;
+              margin-top: -90vh;
               opacity: 0;
               -webkit-transition: all 0.25s ease-in-out;
               -moz-transition: all 0.25s ease-in-out;
@@ -326,19 +323,53 @@ body {
           body .page-container .work-page .nav-container .nav-items .nav-icon a:active {
             color: #11111a; }
       body .page-container .work-page .work-hero-container {
-        height: 80vh;
+        height: 90vh;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        background: #f5f5f5; }
-      body .page-container .work-page .work-artifacts {
-        opacity: 1; }
-        body .page-container .work-page .work-artifacts div:first-child {
+        background: #fafafa; }
+      body .page-container .work-page .work-artifacts .artifact-plate {
+        opacity: 0;
+        margin-bottom: 5vw; }
+        @media (max-width: 767px) {
+          body .page-container .work-page .work-artifacts .artifact-plate {
+            padding: 0 5vw; } }
+        body .page-container .work-page .work-artifacts .artifact-plate.work-title {
           opacity: 0;
-          animation: 0.75s ease-out 0.25s 1 easeUp forwards; }
-        body .page-container .work-page .work-artifacts .artifact-plate {
-          opacity: 0; }
+          height: 60vh; }
+        body .page-container .work-page .work-artifacts .artifact-plate .plate-image {
+          height: 100vh;
+          background: #F0F2F5; }
+        body .page-container .work-page .work-artifacts .artifact-plate .plate-text {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1 {
+            display: block !important;
+            line-height: 57.75px; }
+            body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1.text-quote {
+              text-align: center;
+              width: 60%; }
+              body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1.text-quote p {
+                font-size: 22px;
+                margin-top: 3vw;
+                color: #ccccca; }
+          body .page-container .work-page .work-artifacts .artifact-plate .plate-text p.text-caption {
+            width: 60%; }
+      body .page-container .work-page .work-footer {
+        font-size: 15.4px;
+        line-height: 26.95px;
+        opacity: 0; }
+        body .page-container .work-page .work-footer .footer-items {
+          margin: 5vw 0 5vw 0;
+          color: #ccccca;
+          display: flex;
+          align-items: flex-start; }
+          body .page-container .work-page .work-footer .footer-items .items-list {
+            list-style-type: none;
+            padding-left: 0;
+            color: #11111a; }
     body .page-container .me-page {
       background: #11111a;
       z-index: 100;
@@ -360,7 +391,8 @@ body {
         height: 100vh; }
         @media (max-width: 767px) {
           body .page-container .me-page .me-container {
-            height: 150vh; } }
+            height: 120vh;
+            margin-top: 50vw; } }
         @media (max-width: 767px) {
           body .page-container .me-page .me-container .me-materials {
             margin-top: 10vw; } }
