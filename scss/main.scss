@@ -154,8 +154,8 @@ body {
             line-height: $primaryFontLineHeight*.8;
           }
           @include breakpoint(xs) {
-            // align-items: center;
-            margin-top: $offsetHintVertical*6;
+            align-items: center;
+            // margin-top: $offsetHintVertical*6;
             opacity: 0;
           }
           span {
@@ -384,9 +384,10 @@ body {
       }
       .me-container {
         height: 100vh;
-        @include breakpoint(xs) {
-          height: 120vh;
-          margin-top: $offsetHintVertical*5;
+        @include breakpoint(md) {
+          height: 150vh;
+          margin-top: $offsetHintVertical*3;
+          // align-items: center;
         }
         .me-materials {
           @include breakpoint(xs) {
@@ -399,7 +400,7 @@ body {
               margin-bottom: $buffer*5;
               opacity: 0;
               @include breakpoint(md) {
-                margin-bottom: $buffer*3;
+                margin-bottom: $buffer*3 !important;
               }
             }
             .p-one {@include animation($animationDurationLong, $animationTimeFirst, easeRotateInLeft);}
