@@ -115,7 +115,7 @@ body {
           .nav-left {text-align:left;}
           .nav-right {
             text-align:right;
-            @include breakpoint(xs) {
+            @include breakpoint(sm) {
               text-align: left;
             }
           }
@@ -285,7 +285,7 @@ body {
       .work-artifacts {
         .artifact-plate {
           @include breakpoint(xs) {
-            padding:0 $buffer*5;
+            padding:$buffer*2 $buffer*5;
           }
           opacity: 0;
           margin-bottom: $buffer*5;
@@ -301,7 +301,7 @@ body {
             background: $lightBluePlateMatte;
             // background: $lightPurplePlateMatte;
             @include breakpoint(xs) {
-              height: 60vh;
+              height: 70vh;
             }
 
           }
@@ -354,7 +354,11 @@ body {
           color: $mediumFontColor;
           display: flex;
           align-items: flex-start;
-          .items-title {}
+          .items-title {
+            @include breakpoint(sm) {
+              margin-top: $buffer*3;
+            }
+          }
           .items-list {
             list-style-type: none;
             padding-left: 0;
@@ -373,6 +377,11 @@ body {
         .nav-items {
           opacity: 0;
           @include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);
+          // .nav-right {
+          //   @include breakpoint(md) {
+          //     text-align: left !important;
+          //   }
+          // }
           .nav-icon {
             a:link {color: $lightFontColor;}
             a:visited {color: $lightFontColor;}
@@ -384,24 +393,23 @@ body {
       }
       .me-container {
         height: 100vh;
-        @include breakpoint(md) {
-          height: 150vh;
-          margin-top: $offsetHintVertical*3;
-          // align-items: center;
+        @include breakpoint(sm) {
+          height: 100vh;
+          margin-top: $buffer*10;
         }
         .me-materials {
           @include breakpoint(xs) {
-            margin-top: $offsetHintVertical;
+            margin-top: $buffer*10;
+            p {
+              margin-bottom: $smallFontLineHeight;
+            }
           }
           .about-me {
             color: $lightFontColor;
             @include animation($animationDurationLong, $animationTimeFirst, easeDown);
             p {
-              margin-bottom: $buffer*5;
+              // margin-bottom: $buffer*5;
               opacity: 0;
-              @include breakpoint(md) {
-                margin-bottom: $buffer*3 !important;
-              }
             }
             .p-one {@include animation($animationDurationLong, $animationTimeFirst, easeRotateInLeft);}
             .p-two {@include animation($animationDurationLong, $animationTimeSecond, easeRotateInLeft);}
@@ -420,6 +428,7 @@ body {
           .contact-info {
             color: $mediumDarkFontColor;
             p {
+              margin-bottom: 0;
               opacity: 0;
               font-size: $smallFontSize;
               a:link {color: $lightFontColor;}
