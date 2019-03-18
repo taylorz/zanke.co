@@ -111,6 +111,9 @@ body {
         position: absolute;
         width: 100%;
         pointer-events: none;
+        &.fixed-nav {
+          position: fixed;
+        }
         .nav-items {
           .nav-left {text-align:left;}
           .nav-right {
@@ -216,6 +219,10 @@ body {
               padding: $buffer*5;
               height: $workItemHeight;
               @include transition;
+              img {
+                height: $workTransitionImgHeight;
+                @include shadow;
+              }
             }
             .work-title {
               display: flex;
@@ -279,7 +286,18 @@ body {
         width: 100%;
         background: $bgColorMedium;
         .hero-artifact {
-          .hero-artifact-image {}
+          // overflow: hidden;
+          .hero-artifact-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: $workItemHeight;
+            img {
+              // height: 80%;
+              height: $workTransitionImgHeight;
+              @include shadow;
+            }
+          }
         }
       }
       .work-artifacts {
@@ -300,10 +318,20 @@ body {
             height: $workPlateHeight;
             background: $lightBluePlateMatte;
             // background: $lightPurplePlateMatte;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            img {
+              height: 80%;
+              @include shadow;
+              // display: flex;
+              // align-items: center;
+              // justify-content: center;
+            }
             @include breakpoint(xs) {
               height: 70vh;
             }
-
           }
           .plate-text {
             display: flex;

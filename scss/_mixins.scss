@@ -113,6 +113,10 @@
   animation: $duration ease-out $delay 1 $animation forwards;
 }
 
+@mixin shadow() {
+  box-shadow: 0px 20px 40px rgba(0,0,0,.1);
+}
+
 [data-aos="worksFade"] {
   // opacity: 0;
   &.aos-animate {
