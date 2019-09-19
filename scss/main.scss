@@ -136,6 +136,9 @@ body {
         .nav-items {
           opacity: 0;
           @include animation($animationDurationLong, $animationTimeFourth, easeRotateInLeft);
+          @include breakpoint(xs) {
+            @include animation($animationDurationLong, $animationTimeFirst, easeUp);
+          }
           .nav-icon {
             a:link {color: $primaryFontColor;}
             a:visited {color: $primaryFontColor;}
@@ -148,10 +151,13 @@ body {
       .hero-container {
         height: 100vh;
         display: flex;
+        @include breakpoint(xs) {
+          height: 90vh;
+        }
         .hero-text {
           width: 100%;
           opacity: 0;
-          @include animation($animationDurationLong, $animationTimeFirst, easeUp);
+          @include animation($animationDurationLong, $animationTimeThird, easeUp);
           @include breakpoint(md) {
             font-size: $primaryFontSize*.8;
             line-height: $primaryFontLineHeight*.8;
@@ -406,11 +412,9 @@ body {
         .nav-items {
           opacity: 0;
           @include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);
-          // .nav-right {
-          //   @include breakpoint(md) {
-          //     text-align: left !important;
-          //   }
-          // }
+          @include breakpoint(xs) {
+            @include animation($animationDurationLong, $animationTimeFirst, easeDown);
+          }
           .nav-icon {
             a:link {color: $lightFontColor;}
             a:visited {color: $lightFontColor;}
@@ -450,6 +454,7 @@ body {
           margin-bottom: $buffer*5;
           @include breakpoint(xs) {
             margin-top: $buffer*5;
+            padding-bottom: $buffer*10;
             p {
               margin-bottom: $smallFontLineHeight;
             }
