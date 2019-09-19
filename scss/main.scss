@@ -178,6 +178,7 @@ body {
               opacity: 1;
               animation: none !important;
             }
+            a {}
           }
         }//hero-subtext
         .hero-subtext {
@@ -423,11 +424,11 @@ body {
         height: 100vh;
         @include breakpoint(sm) {
           height: 100vh;
-          margin-top: $buffer*10;
+          margin-top: $buffer*8;
         }
         .me-materials {
           @include breakpoint(xs) {
-            margin-top: $buffer*10;
+            margin-top: $buffer*8;
             p {
               margin-bottom: $smallFontLineHeight;
             }
@@ -444,12 +445,46 @@ body {
             .p-three {@include animation($animationDurationLong, $animationTimeThird, easeRotateInLeft);}
           }
         }//me-materials
+        .me-capabilities {
+          margin-top: $buffer*2;
+          margin-bottom: $buffer*5;
+          @include breakpoint(xs) {
+            margin-top: $buffer*5;
+            p {
+              margin-bottom: $smallFontLineHeight;
+            }
+          }
+          .cap-list {
+            @include animation($animationDurationLong, $animationTimeThird, easeDown);
+            .list-container {
+              opacity: 0;
+              margin-bottom: $buffer*2;
+              @include breakpoint(xs) {
+                margin-bottom: $buffer*8;
+              }
+              .list-header {
+                font-size: $smallFontSize;
+                color: $mediumDarkFontColor;
+              }
+              ul.list-body {
+                color: $lightFontColor;
+                list-style-type: none;
+                margin: 0; padding: 0;
+                li {}
+              }
+              &.list-one {@include animation($animationDurationLong, $animationTimeThird, easeRotateInLeft);}
+              &.list-two {@include animation($animationDurationLong, $animationTimeFourth, easeRotateInLeft);}
+              &.list-three {@include animation($animationDurationLong, $animationTimeFifth, easeRotateInLeft);}
+            }
+          }
+        }//me-capabilities
         .me-contact {
           // width: 500%;
           // width: 100%;
           width: 80vw;
           position: absolute;
-          bottom: $offsetHintVertical;
+          // bottom: $offsetHintVertical;
+          bottom: $buffer*5;
           @include breakpoint(sm) {
             bottom: $offsetHintVertical*2;
           }
@@ -467,6 +502,7 @@ body {
             .p-four {
               @include animation($animationDurationLong, $animationTimeFifth, easeRotateInLeft);
               display:block;
+              line-height: $smallFontLineHeight;
             }
           }
         }

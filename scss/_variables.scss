@@ -3,9 +3,9 @@ $bgColorDark:               #11111a;
 $bgColorMedium:             #fafafa;
 $bgColorLight:              #ffffff;
 
-$primaryFont:               'Atlas Grotesk';
+$primaryFont:               "Atlas Grotesk";
 $primaryFontSize:           22px;
-$primaryFontLineHeight:     $primaryFontSize*1.75;
+$primaryFontLineHeight:     $primaryFontSize*1.5;
 $primaryFontColor:          $bgColorDark;
 
 $xlargeFontSize:            $primaryFontSize*2.25;
@@ -14,8 +14,8 @@ $xlargeLineHeight:          $primaryFontLineHeight*2.25;
 $largeFontSize:             $primaryFontSize*1.5;
 $largeFontLineHeight:       $primaryFontLineHeight*1.5;
 
-$smallFontSize:             $primaryFontSize*.7;
-$smallFontLineHeight:       $primaryFontLineHeight*.7;
+$smallFontSize:             $primaryFontSize*.6;
+$smallFontLineHeight:       $primaryFontLineHeight*.65;
 
 $lightFontColor:            #fafafa;
 $mediumFontColor:           #ccccca;
