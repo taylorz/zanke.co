@@ -137,7 +137,7 @@ body {
           opacity: 0;
           @include animation($animationDurationLong, $animationTimeFourth, easeRotateInLeft);
           @include breakpoint(xs) {
-            @include animation($animationDurationLong, $animationTimeFirst, easeUp);
+            // @include animation($animationDurationLong, $animationTimeFirst, easeUp);
           }
           .nav-icon {
             a:link {color: $primaryFontColor;}
