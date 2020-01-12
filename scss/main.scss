@@ -151,6 +151,15 @@ body {
             background: #E6E7E0;
             opacity: 0;
             @include animation($animationDurationMiddle, $animationTimeFirst, backgroundSlideRight);
+            p {
+              margin: $buffer*3;
+              position: absolute;
+              top: 0;
+              left: 0;
+              color: darken(#E6E7E0, 50%);
+              opacity: 0;
+              @include animation($animationDurationLong, $animationTimeSecond, easeUp);
+            }
             // padding: 8% 8% 0 8%;
             // @include breakpoint(md) {
             //   padding: 15% 0 0 0;
@@ -158,7 +167,7 @@ body {
             .headshot-image {
               width: 100%; height: 100%;
               opacity: 0;
-              @include animation($animationDurationMiddle, $animationTimeThird, easeRight);
+              @include animation($animationDurationMiddle, $animationTimeThird, easeUp);
               background: url('../assets/images/headshot/zanke.png');
               background-size: contain;
               background-repeat: no-repeat;
@@ -181,11 +190,11 @@ body {
               .statement {
                 &.primary {
                   opacity: 0;
-                  @include animation($animationDurationMiddle, $animationTimeThird, easeUp);
+                  @include animation($animationDurationMiddle, $animationTimeFourth, easeUp);
                   h1 {
                     font-size: $xlargeFontSize;
                     line-height: $xlargeLineHeight;
-                    @include animation($animationDurationMiddle, $animationTimeThird, easeRotateIn);
+                    @include animation($animationDurationMiddle, $animationTimeFourth, easeRotateIn);
                     @include breakpoint(xs) {
                       font-size: $primaryFontSize;
                       line-height: $primaryFontLineHeight;
@@ -194,9 +203,9 @@ body {
                 }
                 &.secondary {
                   opacity: 0;
-                  @include animation($animationDurationMiddle, $animationTimeFourth, easeUp);
+                  @include animation($animationDurationMiddle, $animationTimeFifth, easeUp);
                   p {
-                    @include animation($animationDurationMiddle, $animationTimeFourth, easeRotateIn);
+                    @include animation($animationDurationMiddle, $animationTimeFifth, easeRotateIn);
                     margin-bottom: $primaryFontLineHeight;
                   }
                 }
@@ -204,9 +213,9 @@ body {
                   opacity: 0;
                   display: flex;
                   align-items: flex-end;
-                  @include animation($animationDurationMiddle, $animationTimeFifth, easeUp);
+                  @include animation($animationDurationMiddle, $animationTimeSixth, easeUp);
                   p {
-                    @include animation($animationDurationMiddle, $animationTimeFifth, easeRotateIn);
+                    @include animation($animationDurationMiddle, $animationTimeSixth, easeRotateIn);
                     margin-bottom: 0;
                   }
                 }
