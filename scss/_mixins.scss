@@ -34,6 +34,17 @@
   transition: all $animationDurationSnappy ease-in-out;
 }
 
+@keyframes backgroundSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
 @keyframes easeRotateIn {
   0% {
     transform: rotate(-1deg);
@@ -54,9 +65,20 @@
     opacity: 1;
   }
 }
+@keyframes easeRight {
+  0% {
+    transform: translateX(-$buffer);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @keyframes easeUp {
   0% {
-    transform: translateY($buffer*2);
+    transform: translateY($buffer);
     opacity: 0;
   }
   100% {

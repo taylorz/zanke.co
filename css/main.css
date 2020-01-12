@@ -8,6 +8,14 @@
   font-weight: normal;
   font-style: normal; }
 
+@keyframes backgroundSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0%); } }
+
 @keyframes easeRotateIn {
   0% {
     transform: rotate(-1deg);
@@ -24,9 +32,17 @@
     transform: rotate(0deg);
     opacity: 1; } }
 
+@keyframes easeRight {
+  0% {
+    transform: translateX(-1vw);
+    opacity: 0; }
+  100% {
+    transform: translateX(0);
+    opacity: 1; } }
+
 @keyframes easeUp {
   0% {
-    transform: translateY(2vw);
+    transform: translateY(1vw);
     opacity: 0; }
   100% {
     transform: translateY(0);
@@ -208,10 +224,14 @@ body {
           body .page-container .index-page .hero-container .hero-contents .headshot-container {
             width: 100%;
             height: 100%;
-            background: #E6E7E0; }
+            background: #E6E7E0;
+            opacity: 0;
+            animation: 0.5s ease-out 0s 1 backgroundSlideRight forwards; }
             body .page-container .index-page .hero-container .hero-contents .headshot-container .headshot-image {
               width: 100%;
               height: 100%;
+              opacity: 0;
+              animation: 0.5s ease-out 0.25s 1 easeRight forwards;
               background: url("../assets/images/headshot/zanke.png");
               background-size: contain;
               background-repeat: no-repeat;
@@ -227,17 +247,28 @@ body {
             @media (max-width: 767px) {
               body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body {
                 padding: 3vw 0; } }
-            body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.primary h1 {
-              font-size: 45px;
-              line-height: 64.5px; }
-              @media (max-width: 767px) {
-                body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.primary h1 {
-                  font-size: 20px;
-                  line-height: 30px; } }
-            body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.secondary p {
-              margin-bottom: 30px; }
+            body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.primary {
+              opacity: 0;
+              animation: 0.5s ease-out 0.5s 1 easeUp forwards; }
+              body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.primary h1 {
+                font-size: 45px;
+                line-height: 64.5px;
+                animation: 0.5s ease-out 0.5s 1 easeRotateIn forwards; }
+                @media (max-width: 767px) {
+                  body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.primary h1 {
+                    font-size: 20px;
+                    line-height: 30px; } }
+            body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.secondary {
+              opacity: 0;
+              animation: 0.5s ease-out 0.75s 1 easeUp forwards; }
+              body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.secondary p {
+                animation: 0.5s ease-out 0.75s 1 easeRotateIn forwards;
+                margin-bottom: 30px; }
             body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.last {
+              opacity: 0;
               display: flex;
-              align-items: flex-end; }
+              align-items: flex-end;
+              animation: 0.5s ease-out 1s 1 easeUp forwards; }
               body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.last p {
+                animation: 0.5s ease-out 1s 1 easeRotateIn forwards;
                 margin-bottom: 0; }
