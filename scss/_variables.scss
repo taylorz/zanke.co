@@ -9,7 +9,7 @@ $primaryFontLineHeight:     $primaryFontSize*1.5;
 $primaryFontColor:          $bgColorDark;
 
 $xlargeFontSize:            $primaryFontSize*2.25;
-$xlargeLineHeight:          $primaryFontLineHeight*2.25;
+$xlargeLineHeight:          $primaryFontLineHeight*2.15;
 
 $largeFontSize:             $primaryFontSize*1.5;
 $largeFontLineHeight:       $primaryFontLineHeight*1.5;
@@ -22,9 +22,10 @@ $mediumFontColor:           #ccccca;
 $mediumDarkFontColor:       #55555a;
 
 $linkColor:                 $primaryFontColor;
-$linkBorderColor:           #eeeeee;
+$linkBorderColor:           #eaeaea;
 $linkBorderHoverColor:      $primaryFontColor;
 $linkBorder:                1px solid $linkBorderColor;
+$linkBorderHover:           1px solid $linkBorderHoverColor;
 
 $animationDurationLong:     .75s;
 $animationDurationMiddle:   .50s;

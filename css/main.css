@@ -60,6 +60,8 @@
 a:link {
   color: #11111a;
   text-decoration: none;
+  padding-bottom: 0.5vw;
+  border-bottom: 1px solid #eaeaea;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
@@ -68,6 +70,8 @@ a:link {
 a:visited {
   color: #11111a;
   text-decoration: none;
+  padding-bottom: 0.5vw;
+  border-bottom: 1px solid #eaeaea;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
@@ -76,6 +80,8 @@ a:visited {
 a:hover {
   color: #11111a;
   text-decoration: none;
+  padding-bottom: 0.5vw;
+  border-bottom: 1px solid #11111a;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
@@ -84,6 +90,8 @@ a:hover {
 a.active {
   color: #11111a;
   text-decoration: none;
+  padding-bottom: 0.5vw;
+  border-bottom: 1px solid #eaeaea;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
@@ -152,7 +160,6 @@ body {
     body .page-container .container-fluid {
       padding: 0; }
       body .page-container .container-fluid section {
-        padding: 5vw;
         position: relative;
         font-size: 20px;
         line-height: 30px;
@@ -185,361 +192,52 @@ body {
           text-align: right; }
     body .page-container .index-page {
       z-index: 0; }
-      body .page-container .index-page .nav-container .nav-items {
-        opacity: 0;
-        animation: 0.75s ease-out 0.75s 1 easeRotateInLeft forwards; }
-        @media (max-width: 767px) {
-          body .page-container .index-page .nav-container .nav-items {
-            animation: 0.75s ease-out 0s 1 easeUp forwards; } }
-        body .page-container .index-page .nav-container .nav-items .nav-icon {
-          text-align: right; }
-          body .page-container .index-page .nav-container .nav-items .nav-icon a:link {
-            color: #11111a; }
-          body .page-container .index-page .nav-container .nav-items .nav-icon a:visited {
-            color: #11111a; }
-          body .page-container .index-page .nav-container .nav-items .nav-icon a:hover {
-            color: #ccccca; }
-          body .page-container .index-page .nav-container .nav-items .nav-icon a:active {
-            color: #ccccca; }
       body .page-container .index-page .hero-container {
         height: 100vh;
-        display: flex; }
+        display: flex;
+        padding: 0; }
+        body .page-container .index-page .hero-container .row {
+          padding: 0;
+          margin: 0; }
         @media (max-width: 767px) {
           body .page-container .index-page .hero-container {
-            height: 90vh; } }
-        body .page-container .index-page .hero-container .hero-text {
+            height: 60vh; } }
+        body .page-container .index-page .hero-container .hero-contents {
           width: 100%;
-          opacity: 0;
-          animation: 0.75s ease-out 0.5s 1 easeUp forwards; }
-          @media (max-width: 992px) {
-            body .page-container .index-page .hero-container .hero-text {
-              font-size: 16px;
-              line-height: 24px; } }
-          @media (max-width: 767px) {
-            body .page-container .index-page .hero-container .hero-text {
-              align-items: center;
-              opacity: 0; } }
-          body .page-container .index-page .hero-container .hero-text span {
-            opacity: 0;
-            display: block; }
-            body .page-container .index-page .hero-container .hero-text span.line-one {
-              animation: 0.75s ease-out 0s 1 easeRotateIn forwards; }
-            body .page-container .index-page .hero-container .hero-text span.line-two {
-              animation: 0.75s ease-out 0.25s 1 easeRotateIn forwards; }
-            body .page-container .index-page .hero-container .hero-text span.line-three {
-              animation: 0.75s ease-out 0.5s 1 easeRotateIn forwards; }
-            @media (max-width: 767px) {
-              body .page-container .index-page .hero-container .hero-text span {
-                display: inline;
-                opacity: 1;
-                animation: none !important; } }
-        body .page-container .index-page .hero-container .hero-subtext {
-          color: #ccccca;
-          font-size: 12px;
-          position: absolute;
-          bottom: 10vw;
-          opacity: 0;
-          animation: 0.75s ease-out 1.25s 1 easeRotateIn forwards; }
-          @media (max-width: 768px) {
-            body .page-container .index-page .hero-container .hero-subtext {
-              bottom: 20vw; } }
-      body .page-container .index-page .works-container {
-        width: 100%;
-        background-color: #ffffff;
-        margin-top: -10vw;
-        position: relative; }
-        @media (max-width: 768px) {
-          body .page-container .index-page .works-container {
-            margin-top: -20vw; } }
-        body .page-container .index-page .works-container .work-preview {
-          margin-bottom: 10vw;
-          margin-left: 0;
-          margin-right: 0;
-          padding: 0;
-          opacity: 0; }
-          body .page-container .index-page .works-container .work-preview:first-child {
-            animation: 0.75s ease-out 0.75s 1 easeUp forwards; }
-          body .page-container .index-page .works-container .work-preview a.work-hero-link {
+          height: 100%; }
+          body .page-container .index-page .hero-container .hero-contents .headshot-container {
             width: 100%;
-            background: #fafafa;
-            -webkit-transition: all 0.25s ease-in-out;
-            -moz-transition: all 0.25s ease-in-out;
-            -o-transition: all 0.25s ease-in-out;
-            transition: all 0.25s ease-in-out; }
-            body .page-container .index-page .works-container .work-preview a.work-hero-link .work-item {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              padding: 5vw;
-              height: 90vh;
-              -webkit-transition: all 0.25s ease-in-out;
-              -moz-transition: all 0.25s ease-in-out;
-              -o-transition: all 0.25s ease-in-out;
-              transition: all 0.25s ease-in-out; }
-              body .page-container .index-page .works-container .work-preview a.work-hero-link .work-item img {
-                height: 70vh;
-                box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1); }
-            body .page-container .index-page .works-container .work-preview a.work-hero-link .work-title {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              height: 90vh;
-              margin-top: -90vh;
-              opacity: 0;
-              -webkit-transition: all 0.25s ease-in-out;
-              -moz-transition: all 0.25s ease-in-out;
-              -o-transition: all 0.25s ease-in-out;
-              transition: all 0.25s ease-in-out; }
-              body .page-container .index-page .works-container .work-preview a.work-hero-link .work-title h1 {
-                font-size: 45px; }
-            body .page-container .index-page .works-container .work-preview a.work-hero-link:hover {
-              -webkit-transition: all 0.25s ease-in-out;
-              -moz-transition: all 0.25s ease-in-out;
-              -o-transition: all 0.25s ease-in-out;
-              transition: all 0.25s ease-in-out; }
-              body .page-container .index-page .works-container .work-preview a.work-hero-link:hover .work-item {
-                opacity: .1;
-                -webkit-transition: all 0.25s ease-in-out;
-                -moz-transition: all 0.25s ease-in-out;
-                -o-transition: all 0.25s ease-in-out;
-                transition: all 0.25s ease-in-out; }
-              body .page-container .index-page .works-container .work-preview a.work-hero-link:hover .work-title {
-                opacity: 1;
-                -webkit-transition: all 0.25s ease-in-out;
-                -moz-transition: all 0.25s ease-in-out;
-                -o-transition: all 0.25s ease-in-out;
-                transition: all 0.25s ease-in-out;
-                animation: 0.25s ease-out 0s 1 easeUp forwards; }
-    body .page-container .work-page {
-      background: #ffffff; }
-      body .page-container .work-page .nav-container .nav-items {
-        animation: 0.75s ease-out 0s 1 easeDown forwards; }
-        body .page-container .work-page .nav-container .nav-items .nav-left {
-          opacity: 0;
-          animation: 0.75s ease-out 0s 1 easeRotateIn forwards; }
-        body .page-container .work-page .nav-container .nav-items .nav-right {
-          opacity: 0;
-          animation: 0.75s ease-out 0.25s 1 easeRotateIn forwards; }
-          @media (max-width: 767px) {
-            body .page-container .work-page .nav-container .nav-items .nav-right {
-              text-align: right !important; } }
-        body .page-container .work-page .nav-container .nav-items .nav-icon {
-          text-align: right; }
-          body .page-container .work-page .nav-container .nav-items .nav-icon a:link {
-            color: #ccccca; }
-          body .page-container .work-page .nav-container .nav-items .nav-icon a:visited {
-            color: #ccccca; }
-          body .page-container .work-page .nav-container .nav-items .nav-icon a:hover {
-            color: #11111a; }
-          body .page-container .work-page .nav-container .nav-items .nav-icon a:active {
-            color: #11111a; }
-      body .page-container .work-page .work-hero-container {
-        height: 90vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        background: #fafafa; }
-        body .page-container .work-page .work-hero-container .hero-artifact .hero-artifact-image {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 90vh; }
-          body .page-container .work-page .work-hero-container .hero-artifact .hero-artifact-image img {
-            height: 70vh;
-            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1); }
-      body .page-container .work-page .work-artifacts .artifact-plate {
-        opacity: 0;
-        margin-bottom: 5vw; }
-        @media (max-width: 767px) {
-          body .page-container .work-page .work-artifacts .artifact-plate {
-            padding: 2vw 5vw; } }
-        body .page-container .work-page .work-artifacts .artifact-plate.work-title {
-          opacity: 0;
-          height: 60vh; }
-          @media (max-width: 767px) {
-            body .page-container .work-page .work-artifacts .artifact-plate.work-title {
-              height: auto; } }
-        body .page-container .work-page .work-artifacts .artifact-plate .plate-image {
-          height: 100vh;
-          background: #F0F2F5;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden; }
-          body .page-container .work-page .work-artifacts .artifact-plate .plate-image img {
-            height: 80%;
-            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1); }
-          @media (max-width: 767px) {
-            body .page-container .work-page .work-artifacts .artifact-plate .plate-image {
-              height: 70vh; } }
-        body .page-container .work-page .work-artifacts .artifact-plate .plate-text {
-          display: flex;
-          align-items: center;
-          justify-content: center; }
-          @media (max-width: 767px) {
-            body .page-container .work-page .work-artifacts .artifact-plate .plate-text {
-              height: 45vh; } }
-          body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1 {
-            display: block !important;
-            line-height: 45px; }
-            body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1.text-quote {
-              text-align: center;
-              width: 60%; }
-              @media (max-width: 767px) {
-                body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1.text-quote {
-                  font-size: 24px;
-                  line-height: 36px;
-                  width: 100%;
-                  text-align: left; } }
-              body .page-container .work-page .work-artifacts .artifact-plate .plate-text h1.text-quote p {
-                font-size: 20px;
-                margin-top: 3vw;
-                color: #ccccca; }
-          body .page-container .work-page .work-artifacts .artifact-plate .plate-text p.text-caption {
-            width: 60%; }
+            height: 100%;
+            background: #E6E7E0; }
+            body .page-container .index-page .hero-container .hero-contents .headshot-container .headshot-image {
+              width: 100%;
+              height: 100%;
+              background: url("../assets/images/headshot/zanke.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center bottom; }
+          body .page-container .index-page .hero-container .hero-contents .statement-container {
+            padding: 3vw;
+            display: flex;
+            justify-content: space-between;
+            height: 100vh; }
             @media (max-width: 767px) {
-              body .page-container .work-page .work-artifacts .artifact-plate .plate-text p.text-caption {
-                width: 100%;
-                text-align: left; } }
-      body .page-container .work-page .work-footer {
-        font-size: 12px;
-        line-height: 19.5px;
-        opacity: 0; }
-        body .page-container .work-page .work-footer .footer-items {
-          margin: 5vw 0 5vw 0;
-          color: #ccccca;
-          display: flex;
-          align-items: flex-start; }
-          @media (max-width: 768px) {
-            body .page-container .work-page .work-footer .footer-items .items-title {
-              margin-top: 3vw; } }
-          body .page-container .work-page .work-footer .footer-items .items-list {
-            list-style-type: none;
-            padding-left: 0;
-            color: #11111a; }
-    body .page-container .me-page {
-      background: #11111a;
-      z-index: 100;
-      position: absolute; }
-      body .page-container .me-page .nav-container .nav-items {
-        opacity: 0;
-        animation: 0.75s ease-out 0.75s 1 easeRotateIn forwards; }
-        @media (max-width: 767px) {
-          body .page-container .me-page .nav-container .nav-items {
-            animation: 0.75s ease-out 0s 1 easeDown forwards; } }
-        body .page-container .me-page .nav-container .nav-items .nav-icon {
-          text-align: right; }
-          body .page-container .me-page .nav-container .nav-items .nav-icon a:link {
-            color: #fafafa; }
-          body .page-container .me-page .nav-container .nav-items .nav-icon a:visited {
-            color: #fafafa; }
-          body .page-container .me-page .nav-container .nav-items .nav-icon a:hover {
-            color: #55555a; }
-          body .page-container .me-page .nav-container .nav-items .nav-icon a:active {
-            color: #55555a; }
-      body .page-container .me-page .me-container {
-        height: 100vh; }
-        @media (max-width: 768px) {
-          body .page-container .me-page .me-container {
-            height: 100vh;
-            margin-top: 8vw; } }
-        @media (max-width: 767px) {
-          body .page-container .me-page .me-container .me-materials {
-            margin-top: 8vw; }
-            body .page-container .me-page .me-container .me-materials p {
-              margin-bottom: 19.5px; } }
-        body .page-container .me-page .me-container .me-materials .about-me {
-          color: #fafafa;
-          animation: 0.75s ease-out 0s 1 easeDown forwards; }
-          body .page-container .me-page .me-container .me-materials .about-me p {
-            opacity: 0; }
-          body .page-container .me-page .me-container .me-materials .about-me .p-one {
-            animation: 0.75s ease-out 0s 1 easeRotateInLeft forwards; }
-          body .page-container .me-page .me-container .me-materials .about-me .p-two {
-            animation: 0.75s ease-out 0.25s 1 easeRotateInLeft forwards; }
-          body .page-container .me-page .me-container .me-materials .about-me .p-three {
-            animation: 0.75s ease-out 0.5s 1 easeRotateInLeft forwards; }
-        body .page-container .me-page .me-container .me-capabilities {
-          margin-top: 2vw;
-          margin-bottom: 5vw; }
-          @media (max-width: 767px) {
-            body .page-container .me-page .me-container .me-capabilities {
-              margin-top: 5vw;
-              padding-bottom: 10vw; }
-              body .page-container .me-page .me-container .me-capabilities p {
-                margin-bottom: 19.5px; } }
-          body .page-container .me-page .me-container .me-capabilities .cap-list {
-            animation: 0.75s ease-out 0.5s 1 easeDown forwards; }
-            body .page-container .me-page .me-container .me-capabilities .cap-list .list-container {
-              opacity: 0;
-              margin-bottom: 2vw; }
-              @media (max-width: 767px) {
-                body .page-container .me-page .me-container .me-capabilities .cap-list .list-container {
-                  margin-bottom: 8vw; } }
-              body .page-container .me-page .me-container .me-capabilities .cap-list .list-container .list-header {
-                font-size: 12px;
-                color: #55555a; }
-              body .page-container .me-page .me-container .me-capabilities .cap-list .list-container ul.list-body {
-                color: #fafafa;
-                list-style-type: none;
-                margin: 0;
-                padding: 0; }
-              body .page-container .me-page .me-container .me-capabilities .cap-list .list-container.list-one {
-                animation: 0.75s ease-out 0.5s 1 easeRotateInLeft forwards; }
-              body .page-container .me-page .me-container .me-capabilities .cap-list .list-container.list-two {
-                animation: 0.75s ease-out 0.75s 1 easeRotateInLeft forwards; }
-              body .page-container .me-page .me-container .me-capabilities .cap-list .list-container.list-three {
-                animation: 0.75s ease-out 1s 1 easeRotateInLeft forwards; }
-        body .page-container .me-page .me-container .me-contact {
-          width: 80vw;
-          position: absolute;
-          bottom: 5vw; }
-          @media (max-width: 768px) {
-            body .page-container .me-page .me-container .me-contact {
-              bottom: 20vw; } }
-          body .page-container .me-page .me-container .me-contact .contact-info {
-            color: #55555a; }
-            body .page-container .me-page .me-container .me-contact .contact-info p {
-              margin-bottom: 0;
-              opacity: 0;
-              font-size: 12px; }
-              body .page-container .me-page .me-container .me-contact .contact-info p a:link {
-                color: #fafafa; }
-              body .page-container .me-page .me-container .me-contact .contact-info p a:visited {
-                color: #fafafa; }
-              body .page-container .me-page .me-container .me-contact .contact-info p a:hover {
-                color: #55555a; }
-              body .page-container .me-page .me-container .me-contact .contact-info p a:active {
-                color: #55555a; }
-            body .page-container .me-page .me-container .me-contact .contact-info .p-four {
-              animation: 0.75s ease-out 1s 1 easeRotateInLeft forwards;
-              display: block;
-              line-height: 19.5px; }
-      body .page-container .me-page .me-image {
-        margin-top: -10vw; }
-        @media (max-width: 768px) {
-          body .page-container .me-page .me-image {
-            margin-top: -20vw; } }
-        body .page-container .me-page .me-image .me-picture {
-          opacity: 0;
-          animation: 0.75s ease-out 0.75s 1 easeUp forwards; }
-          @media (max-width: 992px) {
-            body .page-container .me-page .me-image .me-picture {
-              text-align: center; } }
-          body .page-container .me-page .me-image .me-picture img {
-            width: 100%;
-            max-width: 100%;
-            max-height: 100%; }
-            @media (max-width: 992px) {
-              body .page-container .me-page .me-image .me-picture img {
-                width: 100%; } }
-          body .page-container .me-page .me-image .me-picture .picture-caption {
-            margin-top: 2vw;
-            color: #55555a;
-            font-size: 12px;
-            text-align: center; }
+              body .page-container .index-page .hero-container .hero-contents .statement-container {
+                height: 90vh; } }
             @media (max-width: 767px) {
-              body .page-container .me-page .me-image .me-picture .picture-caption {
-                text-align: left;
-                margin-top: 10vw; } }
+              body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body {
+                padding: 3vw 0; } }
+            body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.primary h1 {
+              font-size: 45px;
+              line-height: 64.5px; }
+              @media (max-width: 767px) {
+                body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.primary h1 {
+                  font-size: 20px;
+                  line-height: 30px; } }
+            body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.secondary p {
+              margin-bottom: 30px; }
+            body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.last {
+              display: flex;
+              align-items: flex-end; }
+              body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.last p {
+                margin-bottom: 0; }

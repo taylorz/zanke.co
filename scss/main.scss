@@ -92,7 +92,7 @@ body {
     .container-fluid {
       padding: 0;
       section {
-        padding: $buffer*5;
+        // padding: $buffer*5;
         position: relative;
         @include breakpoint(xs) {
           padding-top: $buffer*10;
@@ -132,417 +132,76 @@ body {
     }//container-fluid
     .index-page {
       z-index: 0;
-      .nav-container {
-        .nav-items {
-          opacity: 0;
-          @include animation($animationDurationLong, $animationTimeFourth, easeRotateInLeft);
-          @include breakpoint(xs) {
-            // @include animation($animationDurationLong, $animationTimeFirst, easeUp);
-          }
-          .nav-icon {
-            a:link {color: $primaryFontColor;}
-            a:visited {color: $primaryFontColor;}
-            a:hover {color: $mediumFontColor;}
-            a:active {color: $mediumFontColor;}
-            text-align: right;
-          }
-        }
-      }
       .hero-container {
         height: 100vh;
         display: flex;
-        @include breakpoint(xs) {
-          height: 90vh;
-        }
-        .hero-text {
-          width: 100%;
-          opacity: 0;
-          @include animation($animationDurationLong, $animationTimeThird, easeUp);
-          @include breakpoint(md) {
-            font-size: $primaryFontSize*.8;
-            line-height: $primaryFontLineHeight*.8;
-          }
-          @include breakpoint(xs) {
-            align-items: center;
-            // margin-top: $offsetHintVertical*6;
-            opacity: 0;
-          }
-          span {
-            opacity: 0;
-            &.line-one {
-              @include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);
-            }
-            &.line-two {
-              @include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);
-            }
-            &.line-three {
-              @include animation($animationDurationLong, $animationTimeThird, easeRotateIn);
-            }
-            display: block;
-            @include breakpoint(xs) {
-              display: inline;
-              opacity: 1;
-              animation: none !important;
-            }
-            a {}
-          }
-        }//hero-subtext
-        .hero-subtext {
-          color: $mediumFontColor;
-          font-size: $smallFontSize;
-          position: absolute;
-          bottom: $offsetHintVertical;
-          opacity: 0;
-          @include animation($animationDurationLong, $animationTimeSixth, easeRotateIn);
-          @include breakpoint(sm) {
-            bottom: $offsetHintVertical*2;
-          }
-        }
-      } //hero-container
-      .works-container {
-        width: 100%;
-        background-color: $bgColorLight;
-        margin-top: -$offsetHintVertical;
-        @include breakpoint(sm) {
-          margin-top: -$offsetHintVertical*2;
-        }
-        position: relative;
-        .work-preview {
-          margin-bottom: $buffer*10;
-          margin-left: 0; margin-right: 0;
+        padding: 0;
+        .row {
           padding: 0;
-          opacity: 0;
-          &:first-child {
-            @include animation($animationDurationLong, $animationTimeFourth, easeUp);
-          }
-          a.work-hero-link {
-            width: 100%;
-            background: $bgColorMedium;
-            @include transition;
-            .work-item {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              padding: $buffer*5;
-              height: $workItemHeight;
-              @include transition;
-              img {
-                height: $workTransitionImgHeight;
-                @include shadow;
-              }
-            }
-            .work-title {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              height: $workItemHeight;
-              margin-top: -$workItemHeight;
-              opacity: 0;
-              @include transition;
-              h1 {
-                font-size: $xlargeFontSize;
-              }
-            }
-            &:hover {
-              // background: $bgColorLight;
-              @include transition;
-              .work-item {
-                opacity: .1;
-                @include transition;
-              }
-              .work-title {
-                opacity: 1;
-                @include transition;
-                @include animation($animationDurationSnappy, $animationTimeFirst, easeUp);
-              }
-            }
-          }
-        }//work-preview
-      }//works-container
-    }//index-page
-    .work-page {
-      background: $bgColorLight;
-      .nav-container {
-        .nav-items {
-          @include animation($animationDurationLong, $animationTimeFirst, easeDown);
-          .nav-left {
-            opacity: 0;
-            @include animation($animationDurationLong, $animationTimeFirst, easeRotateIn);
-          }
-          .nav-right {
-            @include breakpoint(xs) {
-            text-align: right !important;
-            }
-            opacity: 0;
-            @include animation($animationDurationLong, $animationTimeSecond, easeRotateIn);
-          }
-          .nav-icon {
-            a:link {color: $mediumFontColor;}
-            a:visited {color: $mediumFontColor;}
-            a:hover {color: $primaryFontColor;}
-            a:active {color: $primaryFontColor;}
-            text-align: right;
-          }
+          margin: 0;
         }
-      }//nav-container
-      .work-hero-container {
-        height: $workItemHeight;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        background: $bgColorMedium;
-        .hero-artifact {
-          // overflow: hidden;
-          .hero-artifact-image {
+        @include breakpoint(xs) {
+          height: 60vh;
+        }
+        .hero-contents {
+          width: 100%;
+          height: 100%;
+          .headshot-container {
+            width: 100%; height: 100%;
+            background: #E6E7E0;
+            // padding: 8% 8% 0 8%;
+            // @include breakpoint(md) {
+            //   padding: 15% 0 0 0;
+            // }
+            .headshot-image {
+              width: 100%; height: 100%;
+              background: url('../assets/images/headshot/zanke.png');
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center bottom;
+              // background-position: 20% 0;
+            }
+          }//headshot-container
+          .statement-container {
+            padding: $buffer*3;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            height: $workItemHeight;
-            img {
-              // height: 80%;
-              height: $workTransitionImgHeight;
-              @include shadow;
-            }
-          }
-        }
-      }
-      .work-artifacts {
-        .artifact-plate {
-          @include breakpoint(xs) {
-            padding:$buffer*2 $buffer*5;
-          }
-          opacity: 0;
-          margin-bottom: $buffer*5;
-          &.work-title {
-            opacity: 0;
-            height: $workItemHeight/1.5;
+            justify-content: space-between;
+            height: 100vh;
             @include breakpoint(xs) {
-              height: auto;
+              height: 90vh;
             }
-          }
-          .plate-image {
-            height: $workPlateHeight;
-            background: $lightBluePlateMatte;
-            // background: $lightPurplePlateMatte;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            img {
-              height: 80%;
-              @include shadow;
-              // display: flex;
-              // align-items: center;
-              // justify-content: center;
-            }
-            @include breakpoint(xs) {
-              height: 70vh;
-            }
-          }
-          .plate-text {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            @include breakpoint(xs) {
-              height: $workItemHeight/2;
-            }
-            h1 {
-              display: block !important;
-              line-height: $largeFontLineHeight;
-              &.text-quote {
-                text-align: center;
-                width: 60%;
-                @include breakpoint(xs) {
-                  font-size: $largeFontSize*.8;
-                  line-height: $largeFontLineHeight*.8;
-                  width: 100%;
-                  text-align: left;
-                }
-                p {
-                  font-size: $primaryFontSize;
-                  margin-top: $buffer*3;
-                  color: $mediumFontColor;
-                }
-              }
-            }
-            p {
-              &.text-caption {
-                width: 60%;
-                @include breakpoint(xs) {
-                  width: 100%;
-                  text-align: left;
-                }
-              }
-            }
-          }
-        }
-      }
-      .work-footer {
-        font-size: $smallFontSize;
-        line-height: $smallFontLineHeight;
-        opacity: 0;
-        // background: $bgColorMedium;
-        .footer-items {
-          margin: $buffer*5 0 $buffer*5 0;
-          // height: $workItemHeight/4;
-          color: $mediumFontColor;
-          display: flex;
-          align-items: flex-start;
-          .items-title {
-            @include breakpoint(sm) {
-              margin-top: $buffer*3;
-            }
-          }
-          .items-list {
-            list-style-type: none;
-            padding-left: 0;
-            color: $primaryFontColor;
-          }
-        }
-      }
-    }
-
-
-    .me-page {
-      background: $bgColorDark;
-      z-index: 100;
-      position: absolute;
-      .nav-container {
-        .nav-items {
-          opacity: 0;
-          @include animation($animationDurationLong, $animationTimeFourth, easeRotateIn);
-          @include breakpoint(xs) {
-            @include animation($animationDurationLong, $animationTimeFirst, easeDown);
-          }
-          .nav-icon {
-            a:link {color: $lightFontColor;}
-            a:visited {color: $lightFontColor;}
-            a:hover {color: $mediumDarkFontColor;}
-            a:active {color: $mediumDarkFontColor;}
-            text-align: right;
-          }
-        }
-      }
-      .me-container {
-        height: 100vh;
-        @include breakpoint(sm) {
-          height: 100vh;
-          margin-top: $buffer*8;
-        }
-        .me-materials {
-          @include breakpoint(xs) {
-            margin-top: $buffer*8;
-            p {
-              margin-bottom: $smallFontLineHeight;
-            }
-          }
-          .about-me {
-            color: $lightFontColor;
-            @include animation($animationDurationLong, $animationTimeFirst, easeDown);
-            p {
-              // margin-bottom: $buffer*5;
-              opacity: 0;
-            }
-            .p-one {@include animation($animationDurationLong, $animationTimeFirst, easeRotateInLeft);}
-            .p-two {@include animation($animationDurationLong, $animationTimeSecond, easeRotateInLeft);}
-            .p-three {@include animation($animationDurationLong, $animationTimeThird, easeRotateInLeft);}
-          }
-        }//me-materials
-        .me-capabilities {
-          margin-top: $buffer*2;
-          margin-bottom: $buffer*5;
-          @include breakpoint(xs) {
-            margin-top: $buffer*5;
-            padding-bottom: $buffer*10;
-            p {
-              margin-bottom: $smallFontLineHeight;
-            }
-          }
-          .cap-list {
-            @include animation($animationDurationLong, $animationTimeThird, easeDown);
-            .list-container {
-              opacity: 0;
-              margin-bottom: $buffer*2;
+            .statement-body {
               @include breakpoint(xs) {
-                margin-bottom: $buffer*8;
+                padding: $buffer*3 0;
               }
-              .list-header {
-                font-size: $smallFontSize;
-                color: $mediumDarkFontColor;
+              .statement {
+                &.primary {
+                  h1 {
+                    font-size: $xlargeFontSize;
+                    line-height: $xlargeLineHeight;
+                    @include breakpoint(xs) {
+                      font-size: $primaryFontSize;
+                      line-height: $primaryFontLineHeight;
+                    }
+                  }
+                }
+                &.secondary {
+                  p {
+                    margin-bottom: $primaryFontLineHeight;
+                  }
+                }
+                &.last {
+                  display: flex;
+                  align-items: flex-end;
+                  p {
+                    margin-bottom: 0;
+                  }
+                }
               }
-              ul.list-body {
-                color: $lightFontColor;
-                list-style-type: none;
-                margin: 0; padding: 0;
-                li {}
-              }
-              &.list-one {@include animation($animationDurationLong, $animationTimeThird, easeRotateInLeft);}
-              &.list-two {@include animation($animationDurationLong, $animationTimeFourth, easeRotateInLeft);}
-              &.list-three {@include animation($animationDurationLong, $animationTimeFifth, easeRotateInLeft);}
-            }
-          }
-        }//me-capabilities
-        .me-contact {
-          // width: 500%;
-          // width: 100%;
-          width: 80vw;
-          position: absolute;
-          // bottom: $offsetHintVertical;
-          bottom: $buffer*5;
-          @include breakpoint(sm) {
-            bottom: $offsetHintVertical*2;
-          }
-          .contact-info {
-            color: $mediumDarkFontColor;
-            p {
-              margin-bottom: 0;
-              opacity: 0;
-              font-size: $smallFontSize;
-              a:link {color: $lightFontColor;}
-              a:visited {color: $lightFontColor;}
-              a:hover {color: $mediumDarkFontColor;}
-              a:active {color: $mediumDarkFontColor;}
-            }
-            .p-four {
-              @include animation($animationDurationLong, $animationTimeFifth, easeRotateInLeft);
-              display:block;
-              line-height: $smallFontLineHeight;
-            }
-          }
-        }
-      }//me-container
-      .me-image {
-        margin-top: -$offsetHintVertical;
-        @include breakpoint(sm) {
-          margin-top: -$offsetHintVertical*2;
-        }
-        .me-picture{
-          opacity: 0;
-          @include animation($animationDurationLong, $animationTimeFourth, easeUp);
-          @include breakpoint(md) {
-            text-align: center;
-          }
-          img {
-            width: 100%;
-            max-width: 100%;
-            max-height: 100%;
-            @include breakpoint(md) {
-              width: 100%;
-            }
-          }
-          .picture-caption {
-            margin-top: $buffer*2;
-            color: $mediumDarkFontColor;
-            font-size: $smallFontSize;
-            text-align: center;
-            @include breakpoint(xs){
-              text-align: left;
-              margin-top: $buffer*10;
-            }
-          }
-        }//me-picture
-      }//me-image
-    }//me-page
+            }//statement-body
+          }//statement-container
+        }//hero-contents
+      }//hero-container
+    }//index-page
   }//page-container
 } //body
