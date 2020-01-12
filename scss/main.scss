@@ -153,6 +153,9 @@ body {
             @include animation($animationDurationMiddle, $animationTimeFirst, backgroundSlideRight);
             p {
               margin: $buffer*3;
+              @include breakpoint(xs) {
+                margin:$buffer*8;
+              }
               position: absolute;
               top: 0;
               left: 0;
@@ -181,7 +184,7 @@ body {
             justify-content: space-between;
             height: 100vh;
             @include breakpoint(xs) {
-              height: 90vh;
+              height: 130vh;
             }
             .statement-body {
               @include breakpoint(xs) {
@@ -192,12 +195,21 @@ body {
                   opacity: 0;
                   @include animation($animationDurationMiddle, $animationTimeFourth, easeUp);
                   h1 {
-                    font-size: $xlargeFontSize;
-                    line-height: $xlargeLineHeight;
+                    margin-bottom: $primaryFontLineHeight;
+                    // font-size: $xlargeFontSize;
+                    // line-height: $xlargeLineHeight;
+                    font-size: $largeFontSize;
+                    line-height: $largeFontLineHeight;
                     @include animation($animationDurationMiddle, $animationTimeFourth, easeRotateIn);
                     @include breakpoint(xs) {
                       font-size: $primaryFontSize;
                       line-height: $primaryFontLineHeight;
+                    }
+                  }
+                  p {
+                    width: 83.333%;
+                    @include breakpoint(xs) {
+                      width: 100%;
                     }
                   }
                 }
@@ -207,16 +219,40 @@ body {
                   p {
                     @include animation($animationDurationMiddle, $animationTimeFifth, easeRotateIn);
                     margin-bottom: $primaryFontLineHeight;
+                    &:last-child {
+                      margin-bottom: 0;
+                    }
+                  }
+                  .testimonial {
+                    .quote {
+                      color: #aaa;
+                      margin-bottom: $buffer*2;
+                    }
+                    .person {
+                      color: #aaa;
+                      font-size: $smallFontSize;
+                    }
                   }
                 }
                 &.last {
                   opacity: 0;
+                  @include breakpoint(xs) {
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+                  }
                   display: flex;
                   align-items: flex-end;
                   @include animation($animationDurationMiddle, $animationTimeSixth, easeUp);
-                  p {
-                    @include animation($animationDurationMiddle, $animationTimeSixth, easeRotateIn);
-                    margin-bottom: 0;
+                  div {
+                    margin-right: $buffer*4;
+                    p {
+                      @include animation($animationDurationMiddle, $animationTimeSixth, easeRotateIn);
+                      margin-bottom: 0;
+                    }
+                    @include breakpoint(xs) {
+                      margin-bottom: $primaryFontLineHeight;
+                    }
                   }
                 }
               }
