@@ -1,28 +1,28 @@
 a:link {
   color: $linkColor;
   text-decoration: none;
-  padding-bottom: $buffer/2;
+  padding-bottom: $buffer/4;
   border-bottom: $linkBorder;
   @include transition;
 }
 a:visited {
   color: $linkColor;
   text-decoration: none;
-  padding-bottom: $buffer/2;
+  padding-bottom: $buffer/4;
   border-bottom: $linkBorder;
   @include transition;
 }
 a:hover {
   color: $linkColor;
   text-decoration: none;
-  padding-bottom: $buffer/2;
+  padding-bottom: $buffer/4;
   border-bottom: $linkBorderHover;
   @include transition;
 }
 a.active {
   color: $linkColor;
   text-decoration: none;
-  padding-bottom: $buffer/2;
+  padding-bottom: $buffer/4;
   border-bottom: $linkBorder;
   @include transition;
 }
