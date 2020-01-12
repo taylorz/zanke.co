@@ -132,7 +132,7 @@
 // }
 
 @mixin animation($duration, $delay, $animation) {
-  animation: $duration ease-out $delay 1 $animation forwards;
+  animation: $duration $easingCubic $delay 1 $animation forwards;
 }
 
 @mixin shadow() {

@@ -71,7 +71,7 @@
     transform: translateY(0); } }
 
 [data-aos="worksFade"].aos-animate {
-  animation: 0.75s ease-out 0s 1 easeUp forwards; }
+  animation: 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 easeUp forwards; }
 
 a:link {
   color: #11111a;
@@ -131,11 +131,11 @@ body {
       body .page-container #background.onscreen {
         transform: translateY(0%); }
     body .page-container.is-exiting[data-transition=backgroundDarkUp] #background {
-      animation: 0.5s ease-out 0.25s 1 backgroundShutter forwards;
+      animation: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.25s 1 backgroundShutter forwards;
       -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       animation-direction: reverse !important; }
     body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid {
-      animation: 0.25s ease-out 0s 1 easeDown forwards;
+      animation: 0.25s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 easeDown forwards;
       animation-direction: reverse !important; }
       body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid .hero-container *, body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid .me-container *, body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid .works-container *, body .page-container.is-exiting[data-transition=backgroundDarkUp] .container-fluid .work-artifacts * {
         animation: none !important;
@@ -165,10 +165,10 @@ body {
         animation: none !important;
         opacity: 0 !important; }
     body .page-container.is-exiting[data-transition=backgroundDarkDown] #background {
-      animation: 0.5s ease-out 0.25s 1 backgroundShutter forwards;
+      animation: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.25s 1 backgroundShutter forwards;
       -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
     body .page-container.is-exiting[data-transition=backgroundDarkDown] .container-fluid {
-      animation: 0.25s ease-out 0s 1 easeUp forwards;
+      animation: 0.25s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 easeUp forwards;
       animation-direction: reverse !important; }
       body .page-container.is-exiting[data-transition=backgroundDarkDown] .container-fluid .hero-container *, body .page-container.is-exiting[data-transition=backgroundDarkDown] .container-fluid .me-container *, body .page-container.is-exiting[data-transition=backgroundDarkDown] .container-fluid .works-container *, body .page-container.is-exiting[data-transition=backgroundDarkDown] .container-fluid .work-artifacts * {
         animation: none !important;
@@ -226,12 +226,12 @@ body {
             height: 100%;
             background: #E6E7E0;
             opacity: 0;
-            animation: 0.5s ease-out 0s 1 backgroundSlideRight forwards; }
+            animation: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 backgroundSlideRight forwards; }
             body .page-container .index-page .hero-container .hero-contents .headshot-container .headshot-image {
               width: 100%;
               height: 100%;
               opacity: 0;
-              animation: 0.5s ease-out 0.25s 1 easeRight forwards;
+              animation: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s 1 easeRight forwards;
               background: url("../assets/images/headshot/zanke.png");
               background-size: contain;
               background-repeat: no-repeat;
@@ -249,26 +249,26 @@ body {
                 padding: 3vw 0; } }
             body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.primary {
               opacity: 0;
-              animation: 0.5s ease-out 0.5s 1 easeUp forwards; }
+              animation: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s 1 easeUp forwards; }
               body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.primary h1 {
                 font-size: 45px;
                 line-height: 64.5px;
-                animation: 0.5s ease-out 0.5s 1 easeRotateIn forwards; }
+                animation: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s 1 easeRotateIn forwards; }
                 @media (max-width: 767px) {
                   body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.primary h1 {
                     font-size: 20px;
                     line-height: 30px; } }
             body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.secondary {
               opacity: 0;
-              animation: 0.5s ease-out 0.75s 1 easeUp forwards; }
+              animation: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.75s 1 easeUp forwards; }
               body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.secondary p {
-                animation: 0.5s ease-out 0.75s 1 easeRotateIn forwards;
+                animation: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.75s 1 easeRotateIn forwards;
                 margin-bottom: 30px; }
             body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.last {
               opacity: 0;
               display: flex;
               align-items: flex-end;
-              animation: 0.5s ease-out 1s 1 easeUp forwards; }
+              animation: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 1s 1 easeUp forwards; }
               body .page-container .index-page .hero-container .hero-contents .statement-container .statement-body .statement.last p {
-                animation: 0.5s ease-out 1s 1 easeRotateIn forwards;
+                animation: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 1s 1 easeRotateIn forwards;
                 margin-bottom: 0; }
